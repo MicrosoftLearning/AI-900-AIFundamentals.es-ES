@@ -1,18 +1,16 @@
 ---
-ms.openlocfilehash: 5e30b50971446e2da8383a94557380ede431b7c9
-ms.sourcegitcommit: a01e0cfb657c6628e71e3e2d981b6f19bde0ed89
+ms.openlocfilehash: 4e00e832d02871de3fa4511273434b6e8db58df3
+ms.sourcegitcommit: 71edd7d093464547be5a87725ef67dad082aafbf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/31/2022
-ms.locfileid: "138099913"
+ms.lasthandoff: 08/23/2022
+ms.locfileid: "147629855"
 ---
-# <a name="microsoft-azure-ai-fundamentals-exercises"></a>Ejercicios de Fundamentos de Microsoft Azure AI
+# <a name="ai-900-microsoft-azure-ai-fundamentals"></a>AI-900: Microsoft Azure AI Fundamentals
 
 Este repositorio contiene los ejercicios de laboratorios prácticos para el curso [*Fundamentos de Microsoft Azure AI*](https://docs.microsoft.com/en-us/learn/certifications/courses/ai-900t00) (AI-900) y los [módulos de aprendizaje autodirigido de Microsoft Learn](https://docs.microsoft.com/learn/certifications/azure-ai-fundamentals). Los laboratorios están pensados para complementar los materiales de aprendizaje y permiten practicar el uso de las tecnologías descritas en estos materiales. 
 
-- **[Descargue el manual del alumno y el contenido AllFiles más recientes](../../releases/latest)**
 - **¿Es un MCT?** Consulte nuestra [guía de usuario de GitHub para MCT](https://microsoftlearning.github.io/MCT-User-Guide/).
-- **¿Necesita crear manualmente las instrucciones de laboratorio?** Las instrucciones están disponibles en el repositorio [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build).
 
 ## <a name="what-are-we-doing"></a>¿Qué vamos a hacer?
 
@@ -34,12 +32,6 @@ Este repositorio contiene los ejercicios de laboratorios prácticos para el curs
 
 ## <a name="how-do-i-contribute"></a>¿Cómo contribuyo?
 
-- Cualquier MCT puede enviar una solicitud de extracción al código o contenido en el repositorio de GitHub, Microsoft y el autor del curso seleccionará e incluirá los cambios de contenido y de laboratorio según sea necesario.
+- Cualquier MCT puede enviar una solicitud de extracción al código o contenido en el reproductor de GitHub, Microsoft y el autor del curso seleccionará e incluirá los cambios de contenido y de laboratorio según sea necesario.
 
-- Si tiene alguna pregunta o detecta algún error, [infórmenos](https://docs.microsoft.com/learn/support/troubleshooting#report-feedback).
-
-## <a name="notes"></a>Notas 
-
-### <a name="classroom-materials"></a>Materiales de aula
-
-Se recomienda encarecidamente que los MCT y los socios accedan a estos materiales y, a su vez, los proporcionen por separado a los estudiantes.  Asignar los estudiantes directamente a GitHub para acceder a los pasos del laboratorio como parte de una clase en curso requerirá que accedan a otra interfaz de usuario como parte del curso, lo que contribuye a una experiencia confusa para el estudiante. Una explicación para el estudiante sobre por qué recibe instrucciones de laboratorio separadas puede resaltar la naturaleza de una interfaz y plataforma basada en la nube en constante cambio. El soporte técnico de Microsoft Learning para acceder a los archivos en GitHub y el soporte para la navegación del sitio de GitHub se limita solo a los MCT que imparten este curso.
+- Puede enviar errores, cambios, mejoras e ideas.  ¿Encontró una nueva característica de Azure antes que nosotros?  ¡Envíe una nueva demostración!
