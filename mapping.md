@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 69f8fd8920fccc0aecc4fb5d5a40e506935f8340
+ms.sourcegitcommit: 276908bd75615fb4d4712b912426129587e9c307
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "140788226"
+---
 # <a name="ai-900-trainer-lab-mapping"></a>Diseño del laboratorio para entrenadores de AI-900
 
 El curso AI-900: Fundamentos de AI tiene un subconjunto de laboratorios diseñados para el aprendizaje dirigido por instructores y adaptados a cursos de un día.
