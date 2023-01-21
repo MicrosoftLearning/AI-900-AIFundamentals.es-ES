@@ -51,7 +51,7 @@ En este ejercicio, usará un conjunto de datos de información histórica de alq
     - **Número mínimo de nodos**: 0
     - **Número máximo de nodos**: 2
     - **Segundos de inactividad antes de la reducción vertical**: 120
-    - **Habilitar acceso SSH**: eliminar
+    - **Habilitar acceso SSH**: Eliminar
     - Seleccione **Crear**
 
 > **Nota** Las instancia de proceso y los clústeres se basan en imágenes de máquina virtual de Azure estándar. Para este módulo, se recomienda la imagen *Standard_DS11_v2* para lograr el equilibrio óptimo entre el costo y el rendimiento. Si la suscripción tiene una cuota que no incluye esta imagen, elija una imagen alternativa, pero tenga en cuenta que una imagen más grande puede incurrir en un costo mayor y una imagen más pequeña puede no ser suficiente para completar las tareas. Como alternativa, pida al administrador de Azure que amplíe la cuota.
