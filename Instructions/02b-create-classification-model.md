@@ -126,9 +126,11 @@ Para poder entrenar un modelo, normalmente es necesario aplicar algunas transfor
 
     ![Captura de pantalla de la ubicación de la biblioteca de recursos para diseñadores, la barra de búsqueda y el icono de componentes.](media/create-classification-model/designer-asset-library-components.png)
 
-1. Localice un módulo **Normalizar datos** y arrástrelo al lienzo, debajo del conjunto de datos **diabetes-data**. Después, conecte la salida de la parte inferior del conjunto de datos **diabetes-data** a la entrada de la parte superior del módulo **Normalizar datos**, como se muestra a continuación:
+1. Localice el módulo **Seleccionar columnas del conjunto de datos** y arrástrelo al lienzo, debajo del conjunto de datos **diabetes-data**. Después, conecte la salida de la parte inferior del conjunto de datos **diabetes-data** a la entrada de la parte superior del módulo **Seleccionar columnas del conjunto de datos**.
 
-    ![Captura de pantalla de una canalización con el conjunto de datos conectado a un módulo Normalizar datos.](media/create-classification-model/dataset-normalize.png)
+1. Localice el módulo **Normalizar datos** y arrástrelo al lienzo, debajo del módulo **Seleccionar columnas del conjunto de datos**. Después, conecte la salida de la parte inferior del módulo **Seleccionar columnas del conjunto de datos** a la entrada de la parte superior del módulo **Normalizar datos**, como se muestra a continuación:
+
+    ![Captura de pantalla de una canalización con el conjunto de datos conectado al módulo seleccionar columnas y Normalizar datos.](media/create-classification-model/dataset-normalize.png)
 
 1. Haga doble clic en el módulo **Normalizar datos** y vea su configuración; recuerde que tendrá que especificar el método de transformación y las columnas que se van a transformar. 
 
@@ -277,6 +279,7 @@ El rendimiento de este modelo no es perfecto, en parte porque solo se han realiz
     
     - Agregue un componente de **entrada de servicio web** para que se envíen nuevos datos.
     - Reemplace el conjunto de datos **diabetes-data** por un módulo **Escribir manualmente los datos** que no incluya la columna de etiqueta (**Diabetic**).
+    - Edite las columnas seleccionadas en el módulo **Seleccionar columnas del conjunto de datos**.
     - Quite el módulo **Evaluar modelo**.
     - Inserte un módulo **Ejecutar script de Python** antes de la salida del servicio web para devolver solo el id. del paciente, la etiqueta pronosticada y la probabilidad.
 
@@ -293,6 +296,8 @@ El rendimiento de este modelo no es perfecto, en parte porque solo se han realiz
 
 1. Conecte el nuevo módulo **Escribir los datos manualmente** a la misma entrada **Conjunto de datos** del módulo **Aplicar transformación** como **Entrada de servicio web**.
 
+1. Edite el módulo **Seleccionar columnas del conjunto de datos**. Quite **Diabetic** de las *Columnas seleccionadas*. 
+
 1. La canalización de inferencia incluye el módulo **Evaluar modelo**, que no resulta útil al realizar predicciones a partir de los datos nuevos, por lo que puede eliminarlo.
 
 1. En la salida del módulo **Puntuar modelo** se incluyen todas las características de entrada, así como la etiqueta de predicción y la puntuación de probabilidad. Para limitar la salida a la predicción y la probabilidad:
@@ -304,7 +309,7 @@ import pandas as pd
 
 def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['PatientID', 'Scored Labels', 'Scored Probabilities']]
+    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
     scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
                                 'Scored Probabilities':'Probability'},
                         inplace=True)
