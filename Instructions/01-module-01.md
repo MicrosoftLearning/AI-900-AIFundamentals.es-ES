@@ -1,6 +1,7 @@
 ---
 lab:
   title: Exploración de Cognitive Services
+  module: Module 1 - Introduction to AI
 ---
 
 # <a name="explore-cognitive-services"></a>Exploración de Cognitive Services

@@ -10,8 +10,10 @@ Estos ejercicios prácticos están diseñados para admitir contenido de formaci�
 
 Para completar estos ejercicios, necesitará una suscripción a Microsoft Azure. Puede registrarse para obtener una prueba gratuita en [https://azure.microsoft.com](https://azure.microsoft.com).
 
-{% assign labs = site.pages | where_exp:"page", "page.url contains '/instructions'" %}
-| Ejercicios |
-| ------- | 
-{% for activity in labs  %}| [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) |
+## <a name="labs"></a>Laboratorios
+
+{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions'" %}
+| Módulo | Laboratorio |
+| --- | --- | 
+{% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}

@@ -1,6 +1,7 @@
 ---
 lab:
   title: Exploración de la respuesta a preguntas
+  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-question-answering"></a>Exploración de la respuesta a preguntas
