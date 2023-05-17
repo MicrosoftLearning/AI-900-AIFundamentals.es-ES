@@ -1,7 +1,6 @@
 ---
 lab:
   title: Exploración de la voz
-  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-speech"></a>Exploración de la voz

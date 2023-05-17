@@ -1,7 +1,6 @@
 ---
 lab:
   title: Exploración de la clasificación de imágenes
-  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-image-classification"></a>Exploración de la clasificación de imágenes

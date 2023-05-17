@@ -1,7 +1,6 @@
 ---
 lab:
   title: Explorar reconocimiento del lenguaje de Azure
-  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-language-understanding"></a>Explorar reconocimiento del lenguaje de Azure

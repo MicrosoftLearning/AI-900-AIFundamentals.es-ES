@@ -1,7 +1,6 @@
 ---
 lab:
   title: Explorar transacción
-  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-translation"></a>Explorar transacción
