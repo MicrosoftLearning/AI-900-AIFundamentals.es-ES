@@ -3,7 +3,7 @@ lab:
   title: Exploración del reconocimiento óptico de caracteres
 ---
 
-# <a name="explore-optical-character-recognition"></a>Exploración del reconocimiento óptico de caracteres
+# Exploración del reconocimiento óptico de caracteres
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
@@ -11,13 +11,13 @@ Uno de los retos comunes de Computer Vision es detectar e interpretar texto de u
 
 Para probar las funcionalidades de Read API, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones del mundo real, como sitios web o aplicaciones de teléfono.
 
-## <a name="use-the-computer-vision-service-to-read-text-in-an-image"></a>Uso del servicio Computer Vision para leer texto de una imagen
+## Uso del servicio Computer Vision para leer texto de una imagen
 
 El servicio cognitivo **Computer Vision** proporciona compatibilidad con tareas de OCR, como por ejemplo:
 
 - Una API **Read** optimizada para documentos más grandes. Esta API se usa de forma asincrónica y se puede emplear con texto impreso y manuscrito.
 
-## <a name="create-a-cognitive-services-resource"></a>Creación de un recurso *Cognitive Services*
+## Creación de un recurso *Cognitive Services*
 
 Para aprovisionar el servicio Computer Vision, puede crear un recurso de **Computer Vision** o un recurso de **Cognitive Services**.
 
@@ -37,7 +37,7 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 1. Vea la página **Claves y punto de conexión** del recurso de Cognitive Services. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
 
-## <a name="run-cloud-shell"></a>Ejecución de Cloud Shell
+## Ejecución de Cloud Shell
 
 Para probar las funcionalidades del servicio Custom Vision, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure.
 
@@ -59,7 +59,7 @@ Para probar las funcionalidades del servicio Custom Vision, usaremos una sencill
 
     ![Espere a que se inicie PowerShell.](media/read-text-computer-vision/powershell-prompt.png) 
 
-## <a name="configure-and-run-a-client-application"></a>Configuración y ejecución de una aplicación cliente
+## Configuración y ejecución de una aplicación cliente
 
 Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación cliente que use el servicio OCR.
 
@@ -129,6 +129,6 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
 1. Revise los resultados del análisis de la segunda imagen. También debe devolver el texto y los cuadros de límite del texto.
 
-## <a name="learn-more"></a>Más información
+## Más información
 
 Esta sencilla aplicación muestra solo algunas de las funcionalidades OCR del servicio Computer Vision. Para más información sobre lo que puede hacer con este servicio, consulte la [página de OCR](https://docs.microsoft.com/azure/cognitive-services/computer-vision/overview-ocr).

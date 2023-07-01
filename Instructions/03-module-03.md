@@ -3,7 +3,7 @@ lab:
   title: Exploración de Computer Vision
 ---
 
-# <a name="explore-computer-vision"></a>Exploración de Computer Vision
+# Exploración de Computer Vision
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
@@ -13,7 +13,7 @@ Por ejemplo, supongamos que el minorista ficticio *Northwind Traders* ha decidid
 
 En este laboratorio, usará una aplicación de línea de comandos sencilla para ver el servicio Computer Vision en acción. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## <a name="create-a-cognitive-services-resource"></a>Creación de un recurso de *Cognitive Services*
+## Creación de un recurso de *Cognitive Services*
 
 Para aprovisionar el servicio Computer Vision, puede crear un recurso de **Computer Vision** o un recurso de **Cognitive Services**.
 
@@ -33,7 +33,7 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 1. Vea la página **Claves y punto de conexión** del recurso de Cognitive Services. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
 
-## <a name="run-cloud-shell"></a>Ejecución de Cloud Shell
+## Ejecución de Cloud Shell
 
 Para probar las funcionalidades del servicio Computer Vision, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure.
 
@@ -55,7 +55,7 @@ Para probar las funcionalidades del servicio Computer Vision, usaremos una senci
 
     ![Espere a que se inicie PowerShell.](media/analyze-images-computer-vision-service/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Configuración y ejecución de una aplicación cliente
+## Configuración y ejecución de una aplicación cliente
 
 Ahora que tiene un entorno de Cloud Shell, puede ejecutar una aplicación sencilla que use el servicio Computer Vision para analizar una imagen.
 
@@ -134,6 +134,6 @@ Ahora que tiene un entorno de Cloud Shell, puede ejecutar una aplicación sencil
 
 1. Revise los resultados del análisis de la tercera imagen.
 
-## <a name="learn-more"></a>Más información
+## Más información
 
 Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Computer Vision. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Computer Vision](https://azure.microsoft.com/services/cognitive-services/computer-vision/).

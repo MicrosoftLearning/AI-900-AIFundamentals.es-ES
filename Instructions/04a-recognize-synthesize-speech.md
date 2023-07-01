@@ -3,7 +3,7 @@ lab:
   title: Exploración de la voz
 ---
 
-# <a name="explore-speech"></a>Exploración de la voz
+# Exploración de la voz
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
@@ -13,7 +13,7 @@ Por ejemplo, supongamos que quiere crear un dispositivo inteligente que pueda re
 
 Para probar las funcionalidades del servicio Voz, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## <a name="create-a-cognitive-services-resource"></a>Creación de un recurso *Cognitive Services*
+## Creación de un recurso *Cognitive Services*
 
 Puede usar el servicio Voz creando un recurso de **Voz** o un recurso de **Cognitive Services**.
 
@@ -31,13 +31,13 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 1. Revise y cree el recurso.
 
-### <a name="get-the-key-and-location-for-your-cognitive-services-resource"></a>Obtención de la clave y la ubicación del recurso de Cognitive Services
+### Obtención de la clave y la ubicación del recurso de Cognitive Services
 
 1. Espere a que la implementación finalice. Después, vaya al recurso de Cognitive Services y, en la página **Información general**, haga clic en el vínculo para administrar las claves del servicio. Necesitará el punto de conexión y las claves para conectarse al recurso de Cognitive Services desde las aplicaciones cliente.
 
 1. Vea la página **Claves y punto de conexión** del recurso. Necesitará la **ubicación/región** y la **clave** para conectarse desde las aplicaciones cliente.
 
-## <a name="run-cloud-shell"></a>Ejecución de Cloud Shell
+## Ejecución de Cloud Shell
 
 Para probar las funcionalidades del servicio Voz, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure.
 
@@ -59,7 +59,7 @@ Para probar las funcionalidades del servicio Voz, usaremos una sencilla aplicaci
 
     ![Espere a que se inicie PowerShell.](media/recognize-synthesize-speech/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Configuración y ejecución de una aplicación cliente
+## Configuración y ejecución de una aplicación cliente
 
 Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación cliente que use el servicio Voz.
 
@@ -117,6 +117,6 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
     <div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RWMSIU" frameborder="0" allowfullscreen="true" data-linktype="external"></iframe></div>
 
-## <a name="learn-more"></a>Más información
+## Más información
 
 Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Voz. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Voz](https://azure.microsoft.com/services/cognitive-services/speech-services/).

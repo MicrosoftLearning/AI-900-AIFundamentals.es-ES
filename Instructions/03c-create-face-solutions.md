@@ -3,7 +3,7 @@ lab:
   title: Exploración del reconocimiento facial
 ---
 
-# <a name="explore-face-recognition"></a>Exploración del reconocimiento facial
+# Exploración del reconocimiento facial
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
@@ -11,7 +11,7 @@ Las soluciones de Computer Vision a menudo requieren una solución de inteligenc
 
 Para probar las funcionalidades del servicio Face, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## <a name="create-a-cognitive-services-resource"></a>Creación de un recurso de *Cognitive Services*
+## Creación de un recurso de *Cognitive Services*
 
 Puede usar el servicio Face creando un recurso de **Face** o un recurso de **Cognitive Services**.
 
@@ -31,7 +31,7 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 1. Vea la página **Claves y punto de conexión** del recurso de Cognitive Services. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
 
-## <a name="run-cloud-shell"></a>Ejecución de Cloud Shell
+## Ejecución de Cloud Shell
 
 Para probar las funcionalidades del servicio Face, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure. 
 
@@ -53,7 +53,7 @@ Para probar las funcionalidades del servicio Face, usaremos una sencilla aplicac
 
     ![Espere a que se inicie PowerShell.](media/create-face-solutions/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Configuración y ejecución de una aplicación cliente
+## Configuración y ejecución de una aplicación cliente
 
 Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación cliente que use el servicio Face.
 
@@ -133,6 +133,6 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
 1. Revise los resultados del análisis de la cara de la tercera imagen.
 
-## <a name="learn-more"></a>Más información
+## Más información
 
 Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Face. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Face API](https://azure.microsoft.com/services/cognitive-services/face/).
