@@ -3,7 +3,7 @@ lab:
   title: Exploración de Cognitive Services
 ---
 
-# <a name="explore-cognitive-services"></a>Exploración de Cognitive Services
+# Exploración de Cognitive Services
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
@@ -15,7 +15,7 @@ Para probar las funcionalidades del servicio de detección de anomalías, usarem
 
 > **Nota** El objetivo de este ejercicio es obtener una idea general de cómo se aprovisionan y usan cognitive Services. Anomaly Detector se usa como ejemplo, pero no se espera que obtenga un conocimiento completo de la detección de anomalías en este ejercicio.
 
-## <a name="create-an-anomaly-detector-resource"></a>Creación de un recurso de *Anomaly Detector*
+## Creación de un recurso de *Anomaly Detector*
 
 Para empezar, vamos a crear un recurso de **Anomaly Detector** en la suscripción de Azure:
 
@@ -32,7 +32,7 @@ Para empezar, vamos a crear un recurso de **Anomaly Detector** en la suscripció
 
 1. Vea la página **Claves y punto de conexión** de su recurso de Anomaly Detector. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
 
-## <a name="run-cloud-shell"></a>Ejecución de Cloud Shell
+## Ejecución de Cloud Shell
 
 Para probar las funcionalidades del servicio Anomaly Detector, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure.
 
@@ -54,7 +54,7 @@ Para probar las funcionalidades del servicio Anomaly Detector, usaremos una senc
 
     ![Espere a que se inicie PowerShell.](media/anomaly-detector/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Configuración y ejecución de una aplicación cliente
+## Configuración y ejecución de una aplicación cliente
 
 Ahora que tiene un entorno de Cloud Shell, puede ejecutar una aplicación sencilla que use el servicio Anomaly Detector para analizar datos.
 
@@ -104,11 +104,11 @@ Ahora que tiene un entorno de Cloud Shell, puede ejecutar una aplicación sencil
 
 1. Revise los resultados y tenga en cuenta que la columna final de los resultados sea **True** o **False** para indicar si el valor registrado en cada fecha y hora se considera una anomalía o no. Considere cómo podríamos usar esta información en una situación real. ¿Qué acción podría desencadenar la aplicación si los valores fueran de temperatura del frigorífico o presión sanguínea y se detectaran anomalías?  
 
-## <a name="learn-more"></a>Más información
+## Más información
 
 Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Anomaly Detector. Para obtener más información sobre lo que puede hacer con este servicio, consulte la [página de Anomaly Detector](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
 
-## <a name="clean-up"></a>Limpieza
+## Limpieza
 
 Se recomienda, al final de un proyecto, identificar si aún necesita los recursos creados. Los recursos que se dejan en ejecución pueden costarle mucho dinero. 
 
