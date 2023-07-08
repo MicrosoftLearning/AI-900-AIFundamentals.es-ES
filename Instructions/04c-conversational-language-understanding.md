@@ -3,7 +3,7 @@ lab:
   title: Explorar reconocimiento del lenguaje de Azure
 ---
 
-# <a name="explore-language-understanding"></a>Explorar reconocimiento del lenguaje de Azure
+# Explorar reconocimiento del lenguaje de Azure
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
@@ -11,7 +11,7 @@ Esperamos que los equipos informáticos puedan usar cada vez más la inteligenci
 
 Para probar las funcionalidades del servicio de reconocimiento del lenguaje conversacional, se usará una aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## <a name="create-a-language-service-resource"></a>Creación de un recurso del *servicio Language*
+## Creación de un recurso del *servicio Language*
 
 Para usar el servicio de reconocimiento del lenguaje conversacional, cree un recurso del **servicio Language**.
 
@@ -30,7 +30,7 @@ Si aún no lo ha hecho, cree un recurso del **servicio Language** en la suscripc
 
 1. Revise y cree el recurso y espere a que finalice la implementación.
 
-### <a name="create-a-conversational-language-understanding-app"></a>Creación de una aplicación de reconocimiento del lenguaje conversacional
+### Creación de una aplicación de reconocimiento del lenguaje conversacional
 
 Para implementar el reconocimiento del lenguaje natural con el reconocimiento del lenguaje conversacional, se crea una aplicación y luego se agregan entidades, intenciones y expresiones para definir los comandos que quiera que ejecute la aplicación.
 
@@ -61,7 +61,7 @@ Para implementar el reconocimiento del lenguaje natural con el reconocimiento de
 
 1. En la página *Revisar y finalizar*, haga clic en **Crear**.
 
-### <a name="create-intents-utterances-and-entities"></a>Creación de intenciones, expresiones y entidades
+### Creación de intenciones, expresiones y entidades
 
 Una *intención* es una acción que quiere realizar; por ejemplo, encender una luz o apagar un ventilador. En este caso, definirá dos intenciones: una para encender un dispositivo y otra para apagarlo. Para cada intención, especificará *expresiones* de ejemplo que indican el tipo de lenguaje utilizado para indicar la intención.
 
@@ -127,7 +127,7 @@ Una *intención* es una acción que quiere realizar; por ejemplo, encender una l
     | switch_off   | Apagar el ventilador | Dispositivo: *seleccionar ventilador* |
     | switch_off   | Apaga la luz | Dispositivo: *seleccionar luz* |
 
-### <a name="train-the-model"></a>Entrenamiento del modelo
+### Entrenamiento del modelo
 
 Ahora está listo para usar las intenciones y entidades que ha definido a fin de entrenar el modelo de lenguaje conversacional de la aplicación.
 
@@ -139,7 +139,7 @@ Ahora está listo para usar las intenciones y entidades que ha definido a fin de
 
 1. Espere a que se complete el entrenamiento. 
 
-### <a name="deploy-and-test-the-model"></a>Implementación y prueba del modelo
+### Implementación y prueba del modelo
 
 Para usar el modelo entrenado en una aplicación cliente, debe implementarlo como un punto de conexión al que las aplicaciones cliente puedan enviar nuevas expresiones; a partir de las cuales se predecirán las intenciones y entidades.
 
@@ -167,7 +167,7 @@ Para usar el modelo entrenado en una aplicación cliente, debe implementarlo com
     - *activa la luz*
     - *desactiva el ventilador*
 
-## <a name="run-cloud-shell"></a>Ejecución de Cloud Shell
+## Ejecución de Cloud Shell
 
 Ahora vamos a probar el modelo implementado. Para ello, se usará una aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure. 
 
@@ -191,7 +191,7 @@ Ahora vamos a probar el modelo implementado. Para ello, se usará una aplicació
 
     ![Espere a que se inicie PowerShell.](media/conversational-language-understanding/powershell-prompt.png) 
 
-## <a name="configure-and-run-a-client-application"></a>Configuración y ejecución de una aplicación cliente
+## Configuración y ejecución de una aplicación cliente
 
 Ahora se abrirá y editará un script escrito previamente, que ejecutará la aplicación cliente.
 
@@ -257,6 +257,6 @@ Ahora se abrirá y editará un script escrito previamente, que ejecutará la apl
 
 >**Nota** Cada vez que tenga que empezar con **./understand.ps1**  seguido de la frase. incluya la frase entre comillas.
 
-## <a name="learn-more"></a>Más información
+## Más información
 
 Esta aplicación solo muestra algunas de las funcionalidades de la característica Conversational Language Understanding del servicio Language. Para obtener más información sobre lo que se puede hacer con este servicio, consulte la [página de reconocimiento del lenguaje conversacional](https://docs.microsoft.com/azure/cognitive-services/language-service/conversational-language-understanding/overview). 

@@ -3,7 +3,7 @@ lab:
   title: Explorar minería de conocimientos
 ---
 
-# <a name="explore-knowledge-mining"></a>Explorar minería de conocimientos
+# Explorar minería de conocimientos
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
@@ -18,7 +18,7 @@ En este laboratorio:
 - Consultar el índice de búsqueda
 - Revisión de los resultados guardados en un almacén de conocimiento
 
-## <a name="azure-resources-needed"></a>Recursos de Azure necesarios
+## Recursos de Azure necesarios
 
 La solución que va a crear para Fourth Coffee requiere los siguientes recursos de su suscripción de Azure:
 
@@ -29,7 +29,7 @@ La solución que va a crear para Fourth Coffee requiere los siguientes recursos 
 
 - Una **cuenta de almacenamiento** con contenedores de blobs, que almacenará documentos sin procesar y otras colecciones de tablas, objetos o archivos.
 
-### <a name="create-an-azure-cognitive-search-resource"></a>Crear un recurso de *Azure Cognitive Search*
+### Crear un recurso de *Azure Cognitive Search*
 
 1. Inicia sesión en [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
 
@@ -45,7 +45,7 @@ La solución que va a crear para Fourth Coffee requiere los siguientes recursos 
 
 1. Una vez finalizada la implementación, seleccione **Ir al recurso**. En la página de información general de Azure Cognitive Search, puede agregar índices, importar datos y buscar índices creados.
 
-### <a name="create-a-cognitive-services-resource"></a>Creación de un recurso de Cognitive Services
+### Creación de un recurso de Cognitive Services
 
 Deberá aprovisionar un recurso de **Cognitive Services** que se encuentre en la misma ubicación que el recurso de Azure Cognitive Search. La solución de búsqueda usará este recurso para enriquecer los datos del almacén de datos con información generada con inteligencia artificial.
 
@@ -61,7 +61,7 @@ Deberá aprovisionar un recurso de **Cognitive Services** que se encuentre en la
 
 1. Espere a que se complete la implementación y vea los detalles de dicha implementación.
 
-### <a name="create-a-storage-account"></a>Crear una cuenta de almacenamiento
+### Crear una cuenta de almacenamiento
 
 1. Vuelva a la página principal de Azure Portal y seleccione el botón **+ Crear un recurso**.
 
@@ -75,7 +75,7 @@ Deberá aprovisionar un recurso de **Cognitive Services** que se encuentre en la
 
 1. Haga clic en **Revisar**, y después en **Crear**. Espere a que se complete la implementación y, a continuación, vaya al recurso implementado.
 
-## <a name="upload-documents-to-azure-storage"></a>Carga de documentos en Azure Storage
+## Carga de documentos en Azure Storage
 
 1. En la cuenta de Azure Storage que creó, en el panel de menús izquierdo, seleccione **Contenedores**.
 
@@ -102,7 +102,7 @@ Deberá aprovisionar un recurso de **Cognitive Services** que se encuentre en la
 
 1. Una vez completada la carga, puede cerrar el panel **Cargar blob**. Ahora los documentos están en el contenedor de almacenamiento *coffee-reviews*.
 
-## <a name="index-the-documents"></a>Indexación de los documentos
+## Indexación de los documentos
 
 Cuando tenga los documentos almacenados, podrá usar Azure Cognitive Search para extraer información de estos. Azure Portal proporciona el asistente *Importar datos*. Con este asistente, puede crear automáticamente un índice y un indexador para los orígenes de datos admitidos. Usará el asistente para crear un índice e importar los documentos de búsqueda del almacenamiento al índice de Azure Cognitive Search.
 
@@ -190,7 +190,7 @@ Cuando tenga los documentos almacenados, podrá usar Azure Cognitive Search para
 
     ![Captura de pantalla que muestra cómo el indexador coffee-indexer se ha creado correctamente.](media/create-cognitive-search-solution/6a-search-indexer-success.png)
 
-## <a name="query-the-index"></a>Consultas al índice
+## Consultas al índice
 
 Use el explorador de búsqueda para escribir y probar consultas. El Explorador de búsqueda es una herramienta integrada en Azure Portal que ofrece una manera fácil de validar la calidad del índice de búsqueda. Puede usar el Explorador de búsqueda para escribir consultas y revisar los resultados en JSON.
 
@@ -206,15 +206,15 @@ Use el explorador de búsqueda para escribir y probar consultas. El Explorador d
 
     > **Nota** Si aparece un elemento **Para buscar en el portal, permita el origen del portal en el mensaje de configuración de CORS de índice**, seleccione **Permitir portal** y, a continuación, seleccione **Buscar**.
 
-1. Ahora vamos a filtrar por ubicación. Escriba `search=$filter=locations eq 'Chicago'` en el campo **Cadena de consulta** y, a continuación, seleccione **Buscar**. La consulta busca en todos los documentos del índice y filtra las revisiones con una ubicación de Chicago.
+1. Ahora vamos a filtrar por ubicación. Escriba `search=locations:'Chicago'` en el campo **Cadena de consulta** y, a continuación, seleccione **Buscar**. La consulta busca en todos los documentos del índice y filtra las revisiones con una ubicación de Chicago.
 
-1. Ahora vamos a filtrar por opinión. Escriba `search=$filter=sentiment eq 'negative'` en el campo **Cadena de consulta** y, a continuación, seleccione **Buscar**. La consulta busca en todos los documentos del índice y filtra las revisiones con una opinión negativa.
+1. Ahora vamos a filtrar por opinión. Escriba `search=sentiment:'negative'` en el campo **Cadena de consulta** y, a continuación, seleccione **Buscar**. La consulta busca en todos los documentos del índice y filtra las revisiones con una opinión negativa.
 
    > **Nota** Vea cómo los resultados se ordenan por `@search.score`. Se trata de la puntuación que el motor de búsqueda asigna para mostrar la proximidad de los resultados con la consulta en cuestión.
 
 1. Uno de los problemas que quizá queramos resolver es por qué puede haber ciertas opiniones. Echemos un vistazo a las frases clave asociadas a una opinión negativa. ¿Cuál cree que puede ser la causa de la opinión?
 
-## <a name="review-the-knowledge-store"></a>Revisión del almacén de conocimiento
+## Revisión del almacén de conocimiento
 
 Veamos el potencial del almacén de conocimientos en acción. Cuando ejecutó el *Asistente para importación de datos*, también creó un almacén de conocimiento. Dentro del almacén de conocimientos, verá que los datos enriquecidos extraídos por las aptitudes de inteligencia artificial persisten en forma de proyecciones y tablas.
 
@@ -250,6 +250,6 @@ Veamos el potencial del almacén de conocimientos en acción. Cuando ejecutó el
 
     Eche un vistazo a las frases clave que el almacén de conocimientos pudo capturar del contenido de las opiniones. Muchos de los campos son claves, por lo que puede vincular las tablas como una base de datos relacional. El último campo muestra las frases clave que extrajo el conjunto de aptitudes.
 
-## <a name="learn-more"></a>Más información
+## Más información
 
 Este índice de búsqueda simple solo contiene algunas de las funcionalidades del servicio Azure Cognitive Search. Para obtener más información sobre lo que puede hacer gracias a este servicio, consulte la [página del servicio Azure Cognitive Search](/azure/search/search-what-is-azure-search).

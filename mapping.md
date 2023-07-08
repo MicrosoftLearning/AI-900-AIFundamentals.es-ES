@@ -1,4 +1,4 @@
-# <a name="ai-900-trainer-lab-mapping"></a>Diseño del laboratorio para entrenadores de AI-900
+# Diseño del laboratorio para entrenadores de AI-900
 
 El curso AI-900: Fundamentos de AI tiene un subconjunto de laboratorios diseñados para el aprendizaje dirigido por instructores y adaptados a cursos de un día.
 
@@ -6,7 +6,7 @@ Los laboratorios de entrenadores del curso AI-900 son un subconjunto de los labo
 
 > Nota: Los instructores pueden agregar más laboratorios del conjunto completo de laboratorios de AI-900 a sus módulos a la hora de impartir sus cursos.
 
-## <a name="ai-900-module-mapping-to-labs"></a>Asignación del módulo de AI-900 a los laboratorios
+## Asignación del módulo de AI-900 a los laboratorios
 
 El subconjunto de laboratorios de AI-900 usado en este curso está asignado a cada módulo de la siguiente manera: 
 
