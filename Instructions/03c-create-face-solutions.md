@@ -11,25 +11,24 @@ Las soluciones de Computer Vision a menudo requieren una solución de inteligenc
 
 Para probar las funcionalidades del servicio Face, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## Creación de un recurso de *Cognitive Services*
+## Creación de un recurso de *Face API*
 
-Puede usar el servicio Face creando un recurso de **Face** o un recurso de **Cognitive Services**.
+Puede usar el servicio Face mediante la creación de un recurso de **Face**. (Face API ya no está disponible en Cognitive Services).
 
-Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripción de Azure.
+Si aún no lo ha hecho, cree un recurso de **Face API** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&amp;#65291;Crear un recurso**, busque *Cognitive Services* y cree un recurso de **Cognitive Services** con la siguiente configuración:
+1. Haga clic en el botón **&#65291;Crear un recurso**, busque *Face* y cree un recurso de **Face** con la configuración siguiente:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
     - **Nombre**: *escriba un nombre único*.
-    - **Plan de tarifa**: estándar S0
-    - **Al marcar esta casilla, confirmo que he leído y comprendido todos los términos que aparecen a continuación**: Seleccionado.
+    - **Plan de tarifa**: F0 gratis.
 
 1. Revise y cree el recurso y espere a que finalice la implementación. A continuación, vaya al recurso implementado.
 
-1. Vea la página **Claves y punto de conexión** del recurso de Cognitive Services. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
+1. Vea la página **Claves y punto de conexión** del recurso de Face. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
 
 ## Ejecución de Cloud Shell
 
@@ -79,7 +78,7 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
     ![Editor que contiene código para detectar caras en una imagen](media/create-face-solutions/find-faces-code.png)
 
-1. No se preocupe demasiado por los detalles del código, lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves para el recurso Cognitive Services. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
+1. No se preocupe demasiado por los detalles del código; lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves para el recurso de Face. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
 
     > **Consejo** Es posible que tenga que usar la barra de separación para ajustar el área de pantalla mientras trabaja con los paneles **Claves y punto de conexión** y **Editor**.
 
@@ -135,4 +134,4 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
 ## Más información
 
-Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Face. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Face API](https://azure.microsoft.com/services/cognitive-services/face/).
+Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Face. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Face API](https://azure.microsoft.com/en-us/products/cognitive-services/vision-services).
