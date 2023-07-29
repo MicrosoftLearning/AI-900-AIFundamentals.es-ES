@@ -3,11 +3,11 @@ lab:
   title: Exploración de la agrupación en clústeres con el diseñador de Azure Machine Learning
 ---
 
-# <a name="explore-clustering-with-azure-machine-learning-designer"></a>Exploración de la agrupación en clústeres con el diseñador de Azure Machine Learning
+# Exploración de la agrupación en clústeres con el diseñador de Azure Machine Learning
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Creación de un área de trabajo de Azure Machine Learning  
+## Creación de un área de trabajo de Azure Machine Learning  
 
 1. Inicie sesión en [Azure Portal](https://portal.azure.com?azure-portal=true) con las credenciales de Microsoft.
 
@@ -25,13 +25,13 @@ lab:
 
 1. Seleccione **Iniciar estudio** (o abra una nueva pestaña del explorador y vaya a [https://ml.azure.com](https://ml.azure.com?azure-portal=true) e inicie sesión en estudio de Azure Machine Learning con su cuenta de Microsoft).
 
-1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no es así, haga clic en **Microsoft** en el menú de la izquierda. A continuación, en el nuevo menú de la izquierda, seleccione **Áreas de trabajo**, donde se muestran todas las áreas de trabajo asociadas a la suscripción. Elija la que creó para este ejercicio. 
+1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no es el caso, seleccione el directorio de Azure en el menú de la izquierda. A continuación, en el nuevo menú de la izquierda, seleccione **Áreas de trabajo**, donde se muestran todas las áreas de trabajo asociadas al directorio y seleccione la que creó para este ejercicio.
 
 > **Nota** Este módulo es uno de los muchos que hacen uso de un área de trabajo Azure Machine Learning, incluidos el resto de módulos de la ruta de aprendizaje[Microsoft Azure AI Fundamentals: exploración de las herramientas visuales para el aprendizaje automático](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Si usa su propia suscripción de Azure, le recomendamos que cree el área de trabajo una vez y la reutilice en otros módulos. A la suscripción de Azure se le cargará un importe reducido por el almacenamiento de datos, siempre y cuando el área de trabajo de Azure Machine Learning exista en la suscripción, por lo que se recomienda eliminar el área de trabajo de Azure Machine Learning cuando ya no sea necesaria.
 
-## <a name="create-compute"></a>Creación del proceso
+## Creación del proceso
 
-1. En [estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), seleccione las tres líneas de la parte superior izquierda para ver las distintas páginas de la interfaz (es posible que tenga que maximizar el tamaño de la pantalla). Puede usar estas páginas del panel de la izquierda para administrar los recursos del área de trabajo. Vea la página **Proceso** (en **Administrar**).
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), seleccione el icono **&#8801;** (un icono de menú que se parece a una pila de tres líneas) en la parte superior izquierda para ver las distintas páginas de la interfaz (es posible que tenga que maximizar el tamaño de la pantalla). Puede usar estas páginas del panel de la izquierda para administrar los recursos del área de trabajo. Vea la página **Proceso** (en **Administrar**).
 
 2. En la página **Proceso**, seleccione la pestaña **Clústeres de proceso** y agregue un clúster de proceso nuevo con la configuración siguiente. Lo usará para entrenar un modelo de Machine Learning:
     - **Ubicación**: *seleccione la misma que el área de trabajo. Si esa ubicación no aparece, elija la más cercana.*
@@ -52,11 +52,11 @@ lab:
 
 El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede continuar con el siguiente paso.
 
-## <a name="create-a-pipeline-in-designer"></a>Creación de una canalización en el diseñador
+## Creación de una canalización en el diseñador
 
 Para empezar a trabajar con el diseñador de Azure Machine Learning, primero debe crear una canalización.
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de las tres líneas de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione el signo más para crear una canalización.
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione el signo más para crear una canalización.
 
 1. En la parte superior derecha de la pantalla, seleccione **Configuración**. Si el panel **Configuración** no está visible, seleccione el icono de la rueda dentada situado junto al nombre de la canalización en la parte superior.
 
@@ -68,11 +68,11 @@ Para empezar a trabajar con el diseñador de Azure Machine Learning, primero deb
 
     ![Captura de pantalla del panel de configuración de Machine Learning Studio.](media/create-clustering-model/create-pipeline-help.png)
 
-## <a name="create-a-dataset"></a>Crear un conjunto de datos
+## Crear un conjunto de datos
 
 En Azure Machine Learning, los datos para el entrenamiento de modelos y otras operaciones se encapsulan normalmente en un objeto denominado *conjunto de datos*. En este módulo, usará un conjunto de datos que incluye observaciones de tres especies de pingüinos.
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando las tres líneas de la parte superior izquierda de la pantalla. Vea la página **Datos** (en **Activos**). La página Datos contiene archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning. También puede crear conjuntos de datos desde esta página.
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Datos** (en **Activos**). La página Datos contiene archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning. También puede crear conjuntos de datos desde esta página.
 
 1. En la página **Datos**, en la pestaña **Recursos de datos**, seleccione **Crear**. A continuación, configure un recurso de datos con las siguientes opciones:
     * **Tipo de datos**:
@@ -100,7 +100,7 @@ En Azure Machine Learning, los datos para el entrenamiento de modelos y otras op
 
 > **Nota** El conjunto de datos sobre pingüinos que se usa en este ejercicio es un subconjunto de datos que han recopilado y hecho público el [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) y la [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), miembro de la [Long Term Ecological Research Network](https://lternet.edu/).
 
-### <a name="load-data-to-canvas"></a>Carga de datos al lienzo
+### Carga de datos al lienzo
 
 1. Vuelva a la canalización seleccionando **Diseñador** en el menú de la izquierda. En la página **Diseñador**, seleccione **train penguin clustering (Entrenar clústeres de pingüinos**).
 
@@ -129,7 +129,7 @@ En Azure Machine Learning, los datos para el entrenamiento de modelos y otras op
 
 1. Cierre la visualización del conjunto de datos para poder ver el conjunto de datos en el lienzo de la canalización.
 
-## <a name="apply-transformations"></a>Aplicación de transformaciones
+## Aplicación de transformaciones
 
 1. En el panel **Biblioteca de recursos** de la izquierda, haga clic en **Componentes**, que contiene una amplia gama de módulos que puede usar para la transformación de datos y el entrenamiento del modelo. También puede utilizar la barra de búsqueda para localizar los módulos con rapidez.
 
@@ -168,7 +168,7 @@ En Azure Machine Learning, los datos para el entrenamiento de modelos y otras op
 
 1. Cierre la configuración del módulo **Normalizar datos** para volver al lienzo del diseñador.
 
-## <a name="run-the-pipeline"></a>Ejecución de la canalización
+## Ejecución de la canalización
 
 Para aplicar las transformaciones de datos, debe ejecutar la canalización como un experimento.
 
@@ -180,7 +180,7 @@ Para aplicar las transformaciones de datos, debe ejecutar la canalización como 
 
     Observe que el panel izquierdo está ahora en el panel **Trabajos enviados**. Sabrá cuándo se completa la ejecución porque el estado del trabajo cambiará a **Completado**.
 
-## <a name="view-the-transformed-data"></a>Visualización de los datos transformados
+## Visualización de los datos transformados
 
 1. Una vez completada la ejecución, el conjunto de datos ya está preparado para el entrenamiento del modelo. Haga clic en **Detalles del trabajo**. Se le dirigirá a otra ventana que mostrará los módulos de la siguiente manera:
 
@@ -196,7 +196,7 @@ Ahora que ha seleccionado y preparado las características que quiere utilizar d
 
 Después de haber usado transformaciones de datos para preparar los datos, puede usarlos para entrenar un modelo de Machine Learning.
 
-## <a name="add-training-modules"></a>Adición de módulos de entrenamiento
+## Adición de módulos de entrenamiento
 
 Lleve a cabo los pasos siguientes para ampliar la canalización **Train Penguin Clustering** como se muestra aquí:
 
@@ -238,7 +238,7 @@ Siga estos pasos y use la imagen anterior como referencia a medida que agrega y 
 
 1. En la **Biblioteca de recursos**, busque y coloque un módulo **Asignar datos a clústeres** en el lienzo, debajo del módulo **Entrenar modelo de agrupación en clústeres**. Después, conecte la salida **Modelo entrenado** (izquierda) del módulo **Entrenar modelo de agrupación en clústeres** a la entrada **Modelo entrenado** (izquierda) del módulo **Asignar datos a clústeres** y conecte la salida **Conjunto de datos de resultados 2** (derecha) del módulo **Dividir datos** a la entrada **Conjunto de datos** (derecha) del módulo **Asignar datos a clústeres**.
 
-## <a name="run-the-training-pipeline"></a>Ejecución de la canalización de entrenamiento
+## Ejecución de la canalización de entrenamiento
 
 Ya está a punto para ejecutar la canalización de entrenamiento y entrenar el modelo.
 
@@ -260,7 +260,7 @@ El modelo predice clústeres para las observaciones de pingüinos, pero ¿qué f
 
 La evaluación de un modelo de agrupación en clústeres se complica por el hecho de que no hay valores *true* conocidos de antemano para las asignaciones de clústeres. Un modelo de agrupación en clústeres correcto es el que consigue un buen nivel de separación entre los elementos de cada clúster, por lo que necesitamos métricas que nos ayuden a medir esa separación.
 
-## <a name="add-an-evaluate-model-module"></a>Adición de un módulo Evaluar modelo
+## Adición de un módulo Evaluar modelo
 
 1. Abra la canalización **Entrenar clústeres sobre pingüinos** que ha creado en la unidad anterior si todavía no está abierta.
 
@@ -286,11 +286,11 @@ Ahora que tiene un modelo de agrupación en clústeres en funcionamiento, puede 
 
 Después de crear y ejecutar una canalización para entrenar el modelo de clúster, puede crear una *canalización de inferencia*. La canalización de inferencia usa el modelo para asignar nuevas observaciones de datos a los clústeres. Este modelo formará la base de un servicio predictivo que puede publicar para que lo usen las aplicaciones.
 
-## <a name="create-an-inference-pipeline"></a>Creación de una canalización de inferencia
+## Creación de una canalización de inferencia
 
-1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando las tres líneas de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-penguin-training** y, después, la canalización **mslearn-penguin-training**. 
+1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-penguin-training** y, después, la canalización **mslearn-penguin-training**. 
 
-1. Busque el menú situado encima del lienzo y haga clic en **Create inference pipeline (Crear canalización de inferencia)**. Es posible que tenga que acceder a la pantalla completa y hacer clic en el icono de tres puntos **...** en la esquina superior derecha de la pantalla para buscar **Create inference pipeline (Crear canalización de inferencia)** en el menú.  
+1. Busque el menú situado encima del lienzo y haga clic en **Create inference pipeline (Crear canalización de inferencia)**. Es posible que tenga que acceder a la pantalla completa y hacer clic en el icono **...** en la esquina superior derecha de la pantalla para buscar **Crear canalización de inferencia** en el menú.  
 
     ![Captura de pantalla de la ubicación de Crear canalización de inferencia.](media/create-clustering-model/create-inference-pipeline.png) 
 
@@ -303,13 +303,13 @@ Después de crear y ejecutar una canalización para entrenar el modelo de clúst
     ![Captura de pantalla de los cambios realizados en la canalización, incluidos los componentes que se van a agregar y quitar marcados en rojo.](media/create-clustering-model/inference-changes.png)
 
     - Agregue un componente de **entrada de servicio web** para que se envíen nuevos datos.
-    - Reemplace el conjunto de datos **penguin-data** por un módulo **Escribir manualmente los datos** que no incluya la columna **Especie**.
-    - Elimine el módulo **Seleccionar columnas en el conjunto de datos**, ya que ahora es redundante.
-    - Conecte los módulos **Entrada del servicio web** e **Escribir manualmente los datos** (que representan las entradas de datos que se van a agrupar) en el primer módulo **Aplicar transformación**.
+    - Reemplace el conjunto de datos **penguin-data** por un componente **Escribir manualmente los datos** que no incluya la columna **Especie**.
+    - Elimine el componente **Seleccionar columnas en el conjunto de datos**, ya que ahora es redundante.
+    - Conecte los componentes **Entrada del servicio web** y **Escribir manualmente los datos** (que representan las entradas de datos que se van a agrupar) en el primer componente **Aplicar transformación**.
 
     Siga los pasos restantes que se indican a continuación, y use la imagen y la información anterior como referencia mientras modifica la canalización.
 
-1. La canalización no incluye automáticamente un componente **de entrada de servicio web** para los modelos creados a partir de conjuntos de datos personalizados. Busque un componente **de entrada de servicio web** desde la biblioteca de recursos y colóquelo en la parte superior de la canalización. Conecte la salida del componente **Entrada de servicio web** a la entrada del lado derecho del componente **Aplicar transformación** que ya está en el lienzo.  
+1. La canalización no incluye automáticamente un componente **de entrada de servicio web** para los modelos creados a partir de conjuntos de datos personalizados. Busque un componente **de entrada de servicio web** desde la biblioteca de recursos y colóquelo en la parte superior de la canalización.  Conecte la salida del componente **Entrada de servicio web** a la entrada del componente **Aplicar transformación** que ya está en el lienzo.  
 
 1. La canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el conjunto de datos **penguin-data** de la canalización de entrenamiento. Sin embargo, estos datos de entrada incluyen una columna para las especies de pingüinos que el modelo no utiliza. Elimine el conjunto de datos **penguin-data** y el módulo **Seleccionar columnas en el conjunto de datos**, y reemplácelos por el módulo **Escribir manualmente los datos** de la **Biblioteca de recursos**. A continuación, modifique la configuración del módulo **Escribir manualmente los datos** para usar la siguiente entrada CSV, que contiene valores de características para tres nuevas observaciones de los pingüinos (incluidos los encabezados):
 
@@ -336,7 +336,7 @@ La canalización de inferencia asigna las observaciones de pingüinos a los clú
 
 >**Nota**: En este ejercicio, implementará el servicio web en una instancia de Azure Container (ACI). Este tipo de proceso se crea dinámicamente y resulta útil para el desarrollo y las pruebas. Para la producción, debe crear un *clúster de inferencia*; esto proporciona un clúster de Azure Kubernetes Service (AKS) que ofrece más escalabilidad y seguridad.
 
-## <a name="deploy-a-service"></a>Implementación de un servicio
+## Implementación de un servicio
 
 1. Vea la canalización de inferencia **Predecir clústeres de pingüinos** que ha creado en la unidad anterior.
 
@@ -355,9 +355,9 @@ La canalización de inferencia asigna las observaciones de pingüinos a los clú
 
 1. Espere a que se implemente el servicio web; esto puede tardar varios minutos. 
 
-1. Para ver el estado de la implementación, expanda el panel izquierdo seleccionando las tres líneas de la parte superior izquierda de la pantalla. Vea la página **Puntos de conexión** (en **Activos**) y seleccione **predict-penguin-clusters**. Una vez finalizada la implementación, el **estado implementación** cambiará a **Correcto**.
+1. Para ver el estado de la implementación, expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Puntos de conexión** (en **Activos**) y seleccione **predict-penguin-clusters**. Una vez finalizada la implementación, el **estado implementación** cambiará a **Correcto**.
 
-## <a name="test-the-service"></a>Probar el servicio
+## Probar el servicio
 
 1. En la página **Puntos de conexión**, abra el punto de conexión en tiempo real **predict-penguin-clusters** y seleccione la pestaña **Probar**.
 
@@ -389,15 +389,15 @@ La canalización de inferencia asigna las observaciones de pingüinos a los clú
 
 Acaba de probar un servicio que está listo para conectarse a una aplicación cliente mediante las credenciales de la pestaña **Consumir**. Terminaremos el laboratorio aquí. Si lo desea, puede seguir experimentando con el servicio que acaba de implementar.
 
-## <a name="clean-up"></a>Limpieza
+## Limpieza
 
-El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure. También debe detener la instancia de proceso hasta que la vuelva a necesitar.
+El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure. También debe eliminar el clúster de proceso.
 
 1. En [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true), en la pestaña **Puntos de conexión**, seleccione el punto de conexión **predict-penguin-clusters**. Después, seleccione **Eliminar** (&#128465;) y confirme que quiere eliminar el punto de conexión.
 
 1. En la página **Proceso**, en la pestaña **Instancias de proceso**, seleccione su instancia de proceso y, luego, **Eliminar**.
 
->**Nota** Al detener el proceso, garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados. Sin embargo, si planea completar cualquier otro laboratorio de esta serie, tendrá que volver a crearla.
+>**Nota:** Al eliminar el proceso, garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados. Sin embargo, si planea completar cualquier otro laboratorio de esta serie, tendrá que volver a crearla.
 >
 > Para eliminar el área de trabajo:
 >

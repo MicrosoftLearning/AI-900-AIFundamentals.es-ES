@@ -3,13 +3,13 @@ lab:
   title: Exploración de la regresión con el diseñador de Azure Machine Learning
 ---
 
-# <a name="explore-regression-with-azure-machine-learning-designer"></a>Exploración de la regresión con el diseñador de Azure Machine Learning
+# Exploración de la regresión con el diseñador de Azure Machine Learning
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
 En este módulo, entrenará un modelo de regresión que predice el precio de un automóvil en función de sus características.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Creación de un área de trabajo de Azure Machine Learning  
+## Creación de un área de trabajo de Azure Machine Learning  
 
 1. Inicie sesión en [Azure Portal](https://portal.azure.com?azure-portal=true) con las credenciales de Microsoft.
 
@@ -27,13 +27,13 @@ En este módulo, entrenará un modelo de regresión que predice el precio de un 
 
 1. Seleccione **Iniciar estudio** (o abra una nueva pestaña del explorador y vaya a [https://ml.azure.com](https://ml.azure.com?azure-portal=true) e inicie sesión en estudio de Azure Machine Learning con su cuenta de Microsoft).
 
-1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no es así, haga clic en **Microsoft** en el menú de la izquierda. A continuación, en el nuevo menú de la izquierda, seleccione **Áreas de trabajo**, donde se muestran todas las áreas de trabajo asociadas a la suscripción. Elija la que creó para este ejercicio. 
+1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no es el caso, seleccione el directorio de Azure en el menú de la izquierda. A continuación, en el nuevo menú de la izquierda, seleccione **Áreas de trabajo**, donde se muestran todas las áreas de trabajo asociadas al directorio y seleccione la que creó para este ejercicio.
 
 > **Nota** Este módulo es uno de los muchos que hacen uso de un área de trabajo Azure Machine Learning, incluidos el resto de módulos de la ruta de aprendizaje[Microsoft Azure AI Fundamentals: exploración de las herramientas visuales para el aprendizaje automático](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Si usa su propia suscripción de Azure, le recomendamos que cree el área de trabajo una vez y la reutilice en otros módulos. A la suscripción de Azure se le cargará un importe reducido por el almacenamiento de datos, siempre y cuando el área de trabajo de Azure Machine Learning exista en la suscripción, por lo que se recomienda eliminar el área de trabajo de Azure Machine Learning cuando ya no sea necesaria.
 
-## <a name="create-compute"></a>Creación del proceso
+## Creación del proceso
 
-1. En [estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), seleccione las tres líneas de la parte superior izquierda para ver las distintas páginas de la interfaz (es posible que tenga que maximizar el tamaño de la pantalla). Puede usar estas páginas del panel de la izquierda para administrar los recursos del área de trabajo. Vea la página **Proceso** (en **Administrar**).
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), seleccione el icono **&#8801;** (un icono de menú que se parece a una pila de tres líneas) en la parte superior izquierda para ver las distintas páginas de la interfaz (es posible que tenga que maximizar el tamaño de la pantalla). Puede usar estas páginas del panel de la izquierda para administrar los recursos del área de trabajo. Vea la página **Proceso** (en **Administrar**).
 
 1. En la página **Proceso**, seleccione la pestaña **Clústeres de proceso** y agregue un clúster de proceso nuevo con la configuración siguiente para entrenar un modelo de Machine Learning:
     - **Ubicación**: *seleccione la misma que el área de trabajo. Si esa ubicación no aparece, elija la más cercana.*
@@ -54,9 +54,9 @@ En este módulo, entrenará un modelo de regresión que predice el precio de un 
 
 El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede continuar con el siguiente paso.
 
-## <a name="create-a-pipeline-in-designer"></a>Creación de una canalización en el Diseñador 
+## Creación de una canalización en el Diseñador 
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de las tres líneas de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione **+** para crear una canalización.
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione **+** para crear una canalización.
 
 1. En la parte superior derecha de la pantalla, seleccione **Configuración**. Si el panel **Configuración** no está visible, seleccione el icono de la rueda dentada situado junto al nombre de la canalización en la parte superior.
 
@@ -64,11 +64,11 @@ El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede
 
 1. En **Configuración**, en **Draft Details (Detalles del borrador)** , cambie el nombre del borrador (*Pipeline-Created-on-* date) a **Auto Price Training**.
 
-1. Seleccione el *icono de cierre* en la esquina superior derecha del panel de **Configuración** para cerrarlo. 
+1. Seleccione el icono de *cierre* en la esquina superior derecha del panel de **Configuración** para cerrarlo. 
 
 ![Captura de pantalla del panel de configuración de Machine Learning Studio.](media/create-regression-model/create-pipeline-help.png)
 
-## <a name="add-and-explore-a-dataset"></a>Adición y exploración de un conjunto de datos
+## Adición y exploración de un conjunto de datos
 
 Azure Machine Learning incluye un conjunto de datos de ejemplo que puede usar para el modelo de regresión.
 
@@ -90,7 +90,7 @@ Azure Machine Learning incluye un conjunto de datos de ejemplo que puede usar pa
 
     ![Captura de pantalla del conjunto de datos de precios de automóviles en el lienzo del diseñador.](media/create-regression-model/dataset.png)
 
-## <a name="add-data-transformations"></a>Adición de transformaciones de datos
+## Adición de transformaciones de datos
 
 Normalmente se aplican transformaciones de datos para preparar los datos para el modelado. En el caso de los datos de precios de automóviles, debe agregar transformaciones para solucionar los problemas que ha identificado al explorar los datos.
 
@@ -147,7 +147,7 @@ Siga los pasos restantes, y use la imagen como referencia a medida que agrega y 
 
     >**Consejo** Si compara los valores de las columnas **stroke**, **peak-rpm**, y **city-mpg** todas se miden en diferentes escalas y es posible que los valores más grandes para **peak-rpm** puedan sesgar el algoritmo y crear una dependencia excecsiva en esta columna, en comparación con las columnas de valores inferiores, como **stroke**. Normalmente, los científicos de datos mitigan este posible sesgo mediante la *normalización* de las columnas numéricas para que estén en escalas similares.
 
-## <a name="run-the-pipeline"></a>Ejecución de la canalización
+## Ejecución de la canalización
 
 Para aplicar las transformaciones de datos, debe ejecutar la canalización.
 
@@ -169,7 +169,7 @@ Para aplicar las transformaciones de datos, debe ejecutar la canalización.
 
 Ahora el conjunto de datos está preparado para el entrenamiento del modelo. Cierre la ventana Detalles del trabajo para volver a la canalización.
 
-## <a name="create-training-pipeline"></a>Creación de una canalización de entrenamiento
+## Creación de una canalización de entrenamiento
 
 Después de haber usado transformaciones de datos para preparar los datos, puede usarlos para entrenar un modelo de Machine Learning. Siga estos pasos para ampliar la canalización **Auto Price Training**.
 
@@ -204,7 +204,7 @@ Después de haber usado transformaciones de datos para preparar los datos, puede
 
     ![Captura de pantalla de cómo realizar la división de los datos y, después, el entrenamiento con regresión lineal y puntuación.](media/create-regression-model/train-score.png)
 
-## <a name="run-the-training-pipeline"></a>Ejecución de la canalización de entrenamiento
+## Ejecución de la canalización de entrenamiento
 
 Ya está a punto para ejecutar la canalización de entrenamiento y entrenar el modelo.
 
@@ -220,7 +220,7 @@ Ya está a punto para ejecutar la canalización de entrenamiento y entrenar el m
 
 El modelo predice valores para la etiqueta **price**, ¿pero qué fiabilidad tienen sus predicciones? Para valorarlo, tendrá que evaluar el modelo.
 
-## <a name="evaluate-model"></a>Evaluación de modelo
+## Evaluación de modelo
 
 Una manera de evaluar un modelo de regresión es comparar las etiquetas previstas con las etiquetas reales del conjunto de datos de validación que se mantiene durante el entrenamiento. Otra manera es comparar el rendimiento de varios modelos.
 
@@ -252,9 +252,9 @@ Una manera de evaluar un modelo de regresión es comparar las etiquetas prevista
 
 Cuando haya identificado un modelo con métricas de evaluación que se ajusten a las necesidades, puede prepararse para usar ese modelo con nuevos datos.
 
-## <a name="create-and-run-an-inference-pipeline"></a>Creación y ejecución de una canalización de inferencia
+## Creación y ejecución de una canalización de inferencia
 
-1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando las tres líneas de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-auto-training** y, después, la canalización **mslearn-auto-training**. 
+1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-auto-training** y, después, la canalización **mslearn-auto-training**. 
 
     ![Captura de pantalla de los trabajos del menú de la izquierda. Seleccione los trabajos y, a continuación, seleccione el nombre de su experimento.](media/create-regression-model/jobs-tab.png)
 
@@ -304,7 +304,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return scored_results
 ```
 
-    - Conecte la salida del módulo **Puntuar modelo** a la entrada **Conjunto de datos 1** (en el extremo izquierdo) del módulo **Ejecutar script de Python**, y conecte la salida del módulo **Ejecutar script de Python** a **Salida del servicio web**.
+1. Conecte la salida del módulo **Puntuar modelo** a la entrada **Conjunto de datos 1** (en el extremo izquierdo) del módulo **Ejecutar script de Python**, y conecte la salida del módulo **Ejecutar script de Python** a **Salida del servicio web**.
 
 1. Compruebe que la canalización tiene un aspecto similar a la imagen siguiente:
 
@@ -318,13 +318,13 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 La canalización de inferencia predice los precios de los automóviles en función de sus características. Ya está a punto para publicar la canalización a fin de que las aplicaciones cliente la puedan usar.
 
-## <a name="deploy-model"></a>Implementación de un modelo
+## Implementación de un modelo
 
 Después de crear y probar una canalización de inferencia para la inferencia en tiempo real, puede publicarla como un servicio para que lo usen las aplicaciones cliente.
 
 > **Nota** En este ejercicio, implementará el servicio web en una instancia de Azure Container (ACI). Este tipo de proceso se crea dinámicamente y resulta útil para el desarrollo y las pruebas. Para producción, debe crear un *clúster de inferencia*, que proporciona un clúster de Azure Kubernetes Service (AKS) que ofrece mejor escalabilidad y seguridad.
 
-## <a name="deploy-a-service"></a>Implementación de un servicio
+## Implementación de un servicio
 
 1. Vea la canalización de inferencia **Predicción de precios automática** que ha creado en la unidad anterior.
 
@@ -343,7 +343,7 @@ Después de crear y probar una canalización de inferencia para la inferencia en
 
 1. Espere unos minutos para que se implemente el servicio web. El estado de implementación se muestra en la parte superior izquierda de la interfaz del diseñador.
 
-## <a name="test-the-service"></a>Probar el servicio
+## Probar el servicio
 
 1. En la página **Puntos de conexión**, abra el punto de conexión en tiempo real **predict-auto-price**.
 
@@ -397,15 +397,15 @@ Revisemos lo que ha hecho. Ha limpiado y transformado un conjunto de datos de au
 
 También ha probado un servicio que está listo para conectarse a una aplicación cliente mediante las credenciales de la pestaña **Consumir**. Terminaremos el laboratorio aquí. Si lo desea, puede seguir experimentando con el servicio que acaba de implementar.
 
-## <a name="clean-up"></a>Limpieza
+## Limpieza
 
-El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure. También debe detener la instancia de proceso hasta que la vuelva a necesitar.
+El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure. También debe eliminar el clúster de proceso.
 
 1. En [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true), en la pestaña **Puntos de conexión**, seleccione el punto de conexión **predict-auto-price**. A continuación, seleccione **Eliminar** y confirme que quiere eliminar el punto de conexión.
 
 1. En la página **Proceso**, en la pestaña **Instancias de proceso**, seleccione su instancia de proceso y, luego, **Eliminar**.
 
->**Nota** Al detener el proceso, garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados. Sin embargo, si planea completar cualquier otro laboratorio de esta serie, tendrá que volver a crearla.
+>**Nota:** Al eliminar el proceso, garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados. Sin embargo, si planea completar cualquier otro laboratorio de esta serie, tendrá que volver a crearla.
 >
 > Para eliminar el área de trabajo:
 >

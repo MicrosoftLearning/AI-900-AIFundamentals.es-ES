@@ -3,11 +3,11 @@ lab:
   title: Exploración de la clasificación con el diseñador de Azure Machine Learning
 ---
 
-# <a name="explore-classification-with-azure-machine-learning-designer"></a>Exploración de la clasificación con el diseñador de Azure Machine Learning
+# Exploración de la clasificación con el diseñador de Azure Machine Learning
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Creación de un área de trabajo de Azure Machine Learning  
+## Creación de un área de trabajo de Azure Machine Learning  
 
 1. Inicie sesión en [Azure Portal](https://portal.azure.com?azure-portal=true) con las credenciales de Microsoft.
 
@@ -25,13 +25,13 @@ lab:
 
 1. Seleccione **Iniciar estudio** (o abra una nueva pestaña del explorador y vaya a [https://ml.azure.com](https://ml.azure.com?azure-portal=true) e inicie sesión en estudio de Azure Machine Learning con su cuenta de Microsoft).
 
-1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no es así, haga clic en **Microsoft** en el menú de la izquierda. A continuación, en el nuevo menú de la izquierda, seleccione **Áreas de trabajo**, donde se muestran todas las áreas de trabajo asociadas a la suscripción. Elija la que creó para este ejercicio. 
+1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no es el caso, seleccione el directorio de Azure en el menú de la izquierda. A continuación, en el nuevo menú de la izquierda, seleccione **Áreas de trabajo**, donde se muestran todas las áreas de trabajo asociadas al directorio y seleccione la que creó para este ejercicio.
 
 > **Nota** Este módulo es uno de los muchos que hacen uso de un área de trabajo Azure Machine Learning, incluidos el resto de módulos de la ruta de aprendizaje[Microsoft Azure AI Fundamentals: exploración de las herramientas visuales para el aprendizaje automático](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Si usa su propia suscripción de Azure, le recomendamos que cree el área de trabajo una vez y la reutilice en otros módulos. A la suscripción de Azure se le cargará un importe reducido por el almacenamiento de datos, siempre y cuando el área de trabajo de Azure Machine Learning exista en la suscripción, por lo que se recomienda eliminar el área de trabajo de Azure Machine Learning cuando ya no sea necesaria.
 
-## <a name="create-compute"></a>Creación del proceso
+## Creación del proceso
 
-1. En [estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), seleccione las tres líneas de la parte superior izquierda para ver las distintas páginas de la interfaz (es posible que tenga que maximizar el tamaño de la pantalla). Puede usar estas páginas del panel de la izquierda para administrar los recursos del área de trabajo. Vea la página **Proceso** (en **Administrar**).
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), seleccione el icono **&#8801;** (un icono de menú que se parece a una pila de tres líneas) en la parte superior izquierda para ver las distintas páginas de la interfaz (es posible que tenga que maximizar el tamaño de la pantalla). Puede usar estas páginas del panel de la izquierda para administrar los recursos del área de trabajo. Vea la página **Proceso** (en **Administrar**).
 
 1. En la página **Proceso**, seleccione la pestaña **Clústeres de proceso** y agregue un clúster de proceso nuevo con la configuración siguiente. Lo usará para entrenar un modelo de Machine Learning:
     - **Ubicación**: *seleccione la misma que el área de trabajo. Si esa ubicación no aparece, elija la más cercana.*
@@ -52,11 +52,11 @@ lab:
 
 El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede continuar con el siguiente paso.
 
-## <a name="create-a-pipeline-in-designer"></a>Creación de una canalización en el Diseñador
+## Creación de una canalización en el Diseñador
 
 Para empezar a trabajar con el diseñador de Azure Machine Learning, primero debe crear una canalización y agregar el conjunto de datos con el que quiere trabajar.
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando las tres líneas de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione **+** para crear una canalización.
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione **+** para crear una canalización.
 
 1. En la parte superior derecha de la pantalla, seleccione **Configuración**. Si el panel **Configuración** no está visible, seleccione el icono de la rueda dentada situado junto al nombre de la canalización en la parte superior.
 
@@ -68,9 +68,9 @@ Para empezar a trabajar con el diseñador de Azure Machine Learning, primero deb
 
     ![Captura de pantalla del panel de configuración de Machine Learning Studio.](media/create-classification-model/create-pipeline-help.png)
 
-## <a name="create-a-dataset"></a>Crear un conjunto de datos
+## Crear un conjunto de datos
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando las tres líneas de la parte superior izquierda de la pantalla. Vea la página **Datos** (en **Activos**). La página Datos contiene archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning. También puede crear conjuntos de datos desde esta página.
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Datos** (en **Activos**). La página Datos contiene archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning. También puede crear conjuntos de datos desde esta página.
 
 1. En la página **Datos**, en la pestaña **Recursos de datos**, seleccione **Crear**. A continuación, configure un recurso de datos con las siguientes opciones:
     * **Tipo de datos**:
@@ -96,7 +96,7 @@ Para empezar a trabajar con el diseñador de Azure Machine Learning, primero deb
 
 1. Después de crear el conjunto de datos, ábralo y vea la página **Explorar** para obtener una muestra de los datos. Estos datos representan detalles de los pacientes que se han sometido a pruebas de diabetes.
 
-### <a name="load-data-to-canvas"></a>Carga de datos al lienzo
+### Carga de datos al lienzo
 
 1. Vuelva a la canalización seleccionando **Diseñador** en el menú de la izquierda. En la página **Diseñador**, seleccione la canalización **Diabetes Training** .
 
@@ -118,7 +118,7 @@ Para empezar a trabajar con el diseñador de Azure Machine Learning, primero deb
 
     ![Captura de pantalla del conjunto de datos diabetes-data en el lienzo del diseñador.](media/create-classification-model/diabetes-data.png)
 
-## <a name="add-transformations"></a>Agregar transformaciones
+## Agregar transformaciones
 
 Para poder entrenar un modelo, normalmente es necesario aplicar algunas transformaciones de preprocesamiento a los datos.
 
@@ -128,27 +128,26 @@ Para poder entrenar un modelo, normalmente es necesario aplicar algunas transfor
 
 1. Localice el módulo **Seleccionar columnas del conjunto de datos** y arrástrelo al lienzo, debajo del conjunto de datos **diabetes-data**. Después, conecte la salida de la parte inferior del conjunto de datos **diabetes-data** a la entrada de la parte superior del módulo **Seleccionar columnas del conjunto de datos**.
 
+1. Haga doble clic en el módulo **Seleccionar columnas del conjunto de datos** para acceder a un panel de configuración a la derecha. Seleccione **Editar columna**. A continuación, en la ventana **Seleccionar columnas**, seleccione **Por nombre** y **Agregar todo** para las columnas. A continuación, quite **PatientID** y haga clic en **Guardar**. 
+
 1. Localice el módulo **Normalizar datos** y arrástrelo al lienzo, debajo del módulo **Seleccionar columnas del conjunto de datos**. Después, conecte la salida de la parte inferior del módulo **Seleccionar columnas del conjunto de datos** a la entrada de la parte superior del módulo **Normalizar datos**, como se muestra a continuación:
 
     ![Captura de pantalla de una canalización con el conjunto de datos conectado al módulo seleccionar columnas y Normalizar datos.](media/create-classification-model/dataset-normalize.png)
 
 1. Haga doble clic en el módulo **Normalizar datos** y vea su configuración; recuerde que tendrá que especificar el método de transformación y las columnas que se van a transformar. 
 
-1. Establezca el *Método de transformación* a **MinMax** y *Usar 0 para columnas constantes cuando se activa* a **True**. Edite las columnas para incluir las columnas siguientes por nombre, como se muestra en la imagen:
-    - **Pregnancies**
-    - **PlasmaGlucose**
-    - **DiastolicBloodPressure**
-    - **TricepsThickness**
-    - **SerumInsulin**
-    - **BMI**
-    - **DiabetesPedigree**
-    - **Age**
+1. Establezca el *Método de transformación* a **MinMax** y *Usar 0 para columnas constantes cuando se activa* a **True**. Edite las columnas para transformarlas con **Editar columnas**. Seleccione columnas **Con reglas** y copie y pegue la lista siguiente en Incluir nombres de columna:  
 
-    ![Captura de pantalla de las columnas seleccionadas para la normalización.](media/create-classification-model/normalize-data.png)
+```
+Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
+```
+![Captura de pantalla de las columnas seleccionadas para la normalización.](media/create-classification-model/normalize-data.png)
+
+Haga clic en **Guardar** y cierre el cuadro de selección. 
 
 La transformación de datos normaliza las columnas numéricas para colocarlas en la misma escala, lo que ayuda a evitar que las que tienen valores grandes dominen el entrenamiento del modelo. Normalmente aplicaría un conjunto completo de transformaciones de preprocesamiento como este a fin de preparar los datos para el entrenamiento, pero en este ejercicio se simplificará el proceso.
 
-## <a name="run-the-pipeline"></a>Ejecución de la canalización
+## Ejecución de la canalización
 
 Para aplicar las transformaciones de datos, debe ejecutar la canalización como un experimento.
 
@@ -160,7 +159,7 @@ Para aplicar las transformaciones de datos, debe ejecutar la canalización como 
 
     Observe que el panel izquierdo está ahora en el panel **Trabajos enviados**. Sabrá cuándo se completa la ejecución porque el estado del trabajo cambiará a **Completado**.
 
-## <a name="view-the-transformed-data"></a>Visualización de los datos transformados
+## Visualización de los datos transformados
 
 1. Una vez completada la ejecución, el conjunto de datos ya está preparado para el entrenamiento del modelo. Haga clic en **Detalles del trabajo**. Se le redirigirá a una nueva pestaña.
 
@@ -172,7 +171,7 @@ Para aplicar las transformaciones de datos, debe ejecutar la canalización como 
 
 Después de haber usado transformaciones de datos para preparar los datos, puede usarlos para entrenar un modelo de Machine Learning.
 
-## <a name="add-training-modules"></a>Adición de módulos de entrenamiento
+## Adición de módulos de entrenamiento
 
 Es habitual entrenar el modelo con un subconjunto de los datos, a la vez que se retienen algunos con los que probar el modelo entrenado. Esto le permite comparar las etiquetas que predice el modelo con las etiquetas conocidas reales del conjunto de datos original.
 
@@ -207,7 +206,7 @@ Siga estos pasos y use la imagen anterior como referencia a medida que agrega y 
 
 1. En el panel **Biblioteca de recursos**, busque y coloque un módulo **Puntuar modelo** en el lienzo, debajo del módulo **Entrenar modelo**. Después, conecte la salida del módulo **Entrenar modelo** a la entrada **Modelo entrenado** (izquierda) del módulo **Puntuar modelo** y conecte la salida **Conjunto de datos de resultados 2** (derecha) del módulo **Dividir datos** a la entrada **Conjunto de datos** (derecha) del módulo **Puntuar modelo**.
 
-## <a name="run-the-training-pipeline"></a>Ejecución de la canalización de entrenamiento
+## Ejecución de la canalización de entrenamiento
 
 Ya está a punto para ejecutar la canalización de entrenamiento y entrenar el modelo.
 
@@ -227,7 +226,7 @@ El modelo predice valores para la etiqueta **Diabetic**, ¿pero qué fiabilidad 
 
 Los datos de validación que se conservan y usan para puntuar el modelo incluyen los valores conocidos de la etiqueta. Por tanto, para validar el modelo, puede comparar los valores reales de la etiqueta con los que se han previsto al puntuar el conjunto de datos de validación. En función de esta comparación, puede calcular varias métricas que describan el rendimiento del modelo.
 
-## <a name="add-an-evaluate-model-module"></a>Adición de un módulo Evaluar modelo
+## Adición de un módulo Evaluar modelo
 
 1. Abra la canalización **Entrenamiento de diabetes** que ha creado antes.
 
@@ -261,9 +260,9 @@ Los datos de validación que se conservan y usan para puntuar el modelo incluyen
 
 El rendimiento de este modelo no es perfecto, en parte porque solo se han realizado tareas mínimas de ingeniería de características y procesamiento previo. Podría probar otro algoritmo de clasificación, como **Bosque de decisión de dos clases** y comparar los resultados. Puede conectar las salidas del módulo **Dividir datos** a varios módulos **Entrenar modelo** y **Puntuar modelo** y, además, puede conectar un segundo módulo **Puntuar modelo** al módulo **Evaluar modelo** para ver una comparación en paralelo. El objetivo del ejercicio es simplemente presentar la clasificación y la interfaz del diseñador de Azure Machine Learning, no entrenar un modelo perfecto.
 
-## <a name="create-an-inference-pipeline"></a>Creación de una canalización de inferencia
+## Creación de una canalización de inferencia
 
-1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando las tres líneas de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-diabetes-training** y, después, la canalización **Diabetes Training**.
+1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-diabetes-training** y, después, la canalización **Diabetes Training**.
 
 1. Busque el menú situado encima del lienzo y haga clic en **Create inference pipeline (Crear canalización de inferencia)**. Es posible que tenga que acceder a la pantalla completa y hacer clic en el icono de tres puntos **...** en la esquina superior derecha de la pantalla para buscar **Create inference pipeline (Crear canalización de inferencia)** en el menú.  
 
@@ -283,7 +282,7 @@ El rendimiento de este modelo no es perfecto, en parte porque solo se han realiz
     - Quite el módulo **Evaluar modelo**.
     - Inserte un módulo **Ejecutar script de Python** antes de la salida del servicio web para devolver solo el id. del paciente, la etiqueta pronosticada y la probabilidad.
 
-1. La canalización no incluye automáticamente un componente **de entrada de servicio web** para los modelos creados a partir de conjuntos de datos personalizados. Busque un componente **de entrada de servicio web** desde la biblioteca de recursos y colóquelo en la parte superior de la canalización. Conecte la salida del componente **Entrada de servicio web** a la entrada del lado derecho del componente **Aplicar transformación** que ya está en el lienzo.
+1. La canalización no incluye automáticamente un componente **de entrada de servicio web** para los modelos creados a partir de conjuntos de datos personalizados. Busque un componente **de entrada de servicio web** desde la biblioteca de recursos y colóquelo en la parte superior de la canalización. Conecte la salida del componente **Entrada de servicio web** al componente **Seleccionar columnas del conjunto de datos** que ya está en el lienzo.
 
 1. La canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el conjunto de datos **diabetes-data** de la canalización de entrenamiento. Pero estos datos de entrada incluyen la etiqueta **Diabetic** que predice el modelo, que no se incluye en los nuevos datos de pacientes para los que todavía no se ha realizado una predicción de la diabetes. Elimine este módulo y reemplácelo por un módulo **Escribir los datos manualmente**, que contiene los siguientes datos CSV, que incluyen valores de características sin etiquetas para tres nuevos pacientes:
 
@@ -294,7 +293,7 @@ El rendimiento de este modelo no es perfecto, en parte porque solo se han realiz
     1228510,4,115,50,29,243,34.69215364,0.741159926,59
     ```
 
-1. Conecte el nuevo módulo **Escribir los datos manualmente** a la misma entrada **Conjunto de datos** del módulo **Aplicar transformación** como **Entrada de servicio web**.
+1. Conecte el nuevo módulo **Escribir los datos manualmente** a la misma entrada **Conjunto de datos** del módulo **Seleccionar columnas del conjunto de datos** como **Entrada de servicio web**.
 
 1. Edite el módulo **Seleccionar columnas del conjunto de datos**. Quite **Diabetic** de las *Columnas seleccionadas*. 
 
@@ -332,7 +331,7 @@ Después de crear y probar una canalización de inferencia para la inferencia en
 
 > **Nota** En este ejercicio, implementará el servicio web en una instancia de Azure Container (ACI). Este tipo de proceso se crea dinámicamente y resulta útil para el desarrollo y las pruebas. Para la producción, debe crear un *clúster de inferencia*; esto proporciona un clúster de Azure Kubernetes Service (AKS) que ofrece más escalabilidad y seguridad.
 
-## <a name="deploy-a-service"></a>Implementación de un servicio
+## Implementación de un servicio
 
 1. Vea la canalización de inferencia **Predict Diabetes** que ha creado en la unidad anterior.
 
@@ -351,7 +350,7 @@ Después de crear y probar una canalización de inferencia para la inferencia en
 
 1. Espere a que se implemente el servicio web; esto puede tardar varios minutos. El estado de implementación se muestra en la parte superior izquierda de la interfaz del diseñador.
 
-## <a name="test-the-service"></a>Probar el servicio
+## Probar el servicio
 
 1. En la página **Puntos de conexión**, abra el punto de conexión en tiempo real **predict-diabetes**.
 
@@ -387,15 +386,15 @@ Después de crear y probar una canalización de inferencia para la inferencia en
 
     Acaba de probar un servicio que está listo para conectarse a una aplicación cliente mediante las credenciales de la pestaña **Consumir**. Terminaremos el laboratorio aquí. Si lo desea, puede seguir experimentando con el servicio que acaba de implementar.
 
-## <a name="clean-up"></a>Limpieza
+## Limpieza
 
-El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure.
+El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure. También debe eliminar el clúster de proceso.
 
 1. En [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true), en la pestaña **Puntos de conexión**, seleccione el punto de conexión **predict-diabetes**. A continuación, seleccione **Eliminar** y confirme que quiere eliminar el punto de conexión.
 
 1. En la página **Proceso**, en la pestaña **Instancias de proceso**, seleccione su instancia de proceso y, luego, **Eliminar**.
 
->**Nota** Al detener el proceso, garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados. Sin embargo, si planea completar cualquier otro laboratorio de esta serie, tendrá que volver a crearla.
+>**Nota:** Al eliminar el proceso, garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados. Sin embargo, si planea completar cualquier otro laboratorio de esta serie, tendrá que volver a crearla.
 >
 > Para eliminar el área de trabajo:
 >
