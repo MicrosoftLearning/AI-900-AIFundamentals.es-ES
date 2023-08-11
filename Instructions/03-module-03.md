@@ -136,4 +136,4 @@ Ahora que tiene un entorno de Cloud Shell, puede ejecutar una aplicación sencil
 
 ## Más información
 
-Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Computer Vision. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Computer Vision](https://azure.microsoft.com/services/cognitive-services/computer-vision/).
+Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Computer Vision. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Computer Vision](https://azure.microsoft.com/products/ai-services?activetab=pivot:visiontab).
