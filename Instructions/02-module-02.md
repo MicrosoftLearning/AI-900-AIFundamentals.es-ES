@@ -62,7 +62,7 @@ El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede
 
 1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Datos** (en **Activos**). La página Datos contiene archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning. También puede crear conjuntos de datos desde esta página.
 
-1. En la página **Datos**, en la pestaña **Recursos de datos**, seleccione **Crear**. A continuación, configure un recurso de datos con las siguientes opciones:
+1. En la página **Datos**, en la pestaña **Recursos de datos**, seleccione **+ Crear**. A continuación, configure un recurso de datos con las siguientes opciones:
     * **Tipo de datos**:
         * **Nombre**: bike-rentals.
         * **Descripción**: datos de alquiler de bicicletas.
@@ -128,9 +128,7 @@ Siga los pasos para ejecutar un trabajo que use el aprendizaje automático autom
         - **Tipo de validación**: Automático
         - **Recurso de datos de prueba (versión preliminar):** no se requiere ningún recurso de datos de prueba
 
-1. Cuando termine de enviar los detalles de la ejecución de ML automatizado, se iniciará automáticamente. Espere a que el estado de ejecución cambie de *Preparando* a *En ejecución*.
-
-1. Cuando el estado de ejecución cambia a *En ejecución*, vea la pestaña **Modelos** y observe que se prueba cada combinación posible de algoritmos de entrenamiento y pasos de preprocesamiento y se evalúa el rendimiento del modelo resultante. La página se actualiza frecuentemente de forma automática, pero también puede seleccionar **Actualizar**. Los modelos pueden tardar unos 10 minutos en aparecer, ya que los nodos de clúster se deben inicializar antes de que pueda comenzar el entrenamiento.
+1. Cuando termine de enviar los detalles de la ejecución de ML automatizado, se iniciará automáticamente.
 
 1. espere a que el trabajo finalice. Este proceso puede tardar un poco. Ahora podría ser un buen momento para hacer una pausa.
 
@@ -163,26 +161,24 @@ Siga los pasos para ejecutar un trabajo que use el aprendizaje automático autom
 
     ![Captura de pantalla del mejor resumen del modelo con un cuadro alrededor del nombre del algoritmo en la pestaña de detalles.](media/use-automated-machine-learning/deploy-detail-tab.png)
 
-1. En la pestaña **Modelo**, seleccione el botón **Implementar** y use la opción **Deploy to web service** (Implementar en el servicio web) para implementar el modelo con la configuración siguiente:
+1. En la pestaña **Modelo**, seleccione el botón **Implementar** y use la opción **Servicio web** para implementar el modelo con la configuración siguiente:
     - **Nombre**: predict-rentals
     - **Descripción**: predicción de alquileres de bicicletas
     - **Tipo de proceso**: instancia de Azure Container.
     - **Habilitar autenticación**: seleccionado
 
-1. Espere a que se inicie la implementación; esto puede tardar unos segundos. Después, en la sección **Resumen de modelo**, observe el **Deploy status** (Estado de la implementación) para el servicio **predict-rentals**, que debe ser **En ejecución**. Espere a que este estado cambie a **Correcto**, lo que puede tardar un tiempo. Es posible que tenga que seleccionar **Actualizar** periódicamente.
+1. Espere a que se inicie la implementación; esto puede tardar unos segundos.
 
-1. En Estudio de Azure Machine Learning, en el menú de la izquierda, seleccione **Puntos de conexión**.
-    ![Captura de pantalla de la ubicación de los puntos de conexión en el menú izquierdo.](media/use-automated-machine-learning/find-endpoints.png)
+1. En Estudio de Azure Machine Learning, en el menú de la izquierda, seleccione **Puntos de conexión** y abra el punto de conexión **predict-rentals** en tiempo real.
+1. Espere a que el **estado de implementación** cambie a **Correcto**: esto puede tardar unos minutos.
 
 ## Prueba del modelo implementado
 
 Ahora puede probar el servicio implementado.
 
-1. En la página **Puntos de conexión**, abra el punto de conexión en tiempo real **predict-rentals**.
+1. En la página **predict-rentals** del punto de conexión en tiempo real, aparecerá la pestaña **Prueba**.
 
-1. Cuando se abra el punto de conexión **predict-rentals**, consulte la pestaña **Probar**.
-
-1. En el **panel de datos de entrada para evaluar el punto de conexión en tiempo real**, reemplace la plantilla JSON por los datos de entrada siguientes:
+1. En el **panel de datos de entrada para evaluar el punto de conexión**, reemplace la plantilla JSON por los datos de entrada siguientes:
 
     ```JSON
     {
