@@ -54,31 +54,21 @@ En este módulo, entrenará un modelo de regresión que predice el precio de un 
 
 El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede continuar con el siguiente paso.
 
-## Creación de una canalización en el Diseñador 
-
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione **+** para crear una canalización.
-
-1. En la parte superior derecha de la pantalla, seleccione **Configuración**. Si el panel **Configuración** no está visible, seleccione el icono de la rueda dentada situado junto al nombre de la canalización en la parte superior.
-
-1. En **Configuración**, tendrá que especificar un destino de proceso en el que ejecutar la canalización. En **Select compute type (Seleccionar tipo de proceso)**, seleccione **Clúster de proceso**. Después, en **Select Azure ML compute cluster (Seleccionar tipo de proceso de Azure ML)** , seleccione el clúster de proceso que creó anteriormente.
-
-1. En **Configuración**, en **Draft Details (Detalles del borrador)** , cambie el nombre del borrador (*Pipeline-Created-on-* date) a **Auto Price Training**.
-
-1. Seleccione el icono de *cierre* en la esquina superior derecha del panel de **Configuración** para cerrarlo. 
-
-![Captura de pantalla del panel de configuración de Machine Learning Studio.](media/create-regression-model/create-pipeline-help.png)
-
-## Adición y exploración de un conjunto de datos
+## Crear una canalización en Designer y agregar un conjunto de datos
 
 Azure Machine Learning incluye un conjunto de datos de ejemplo que puede usar para el modelo de regresión.
+
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Creación**) y seleccione **+** para crear una canalización.
+
+1. Cambie el nombre del borrador (**Pipeline-Created-on-* date***) a **Auto Price Training**.
 
 1. Junto al nombre de la canalización en el lado izquierdo, seleccione el icono de flechas para expandir el panel si está contraído. El panel debería abrirse de forma predeterminada en el **Panel biblioteca**, indicado por el icono de libros situado en la parte superior del panel. Hay una barra de búsqueda para buscar recursos en el panel y dos botones, **Datos** y **Componentes**.
 
     ![Captura de pantalla de la ubicación de la biblioteca de recursos para diseñadores, la barra de búsqueda y el icono de componentes.](media/create-regression-model/designer-asset-library-components.png)
 
-1. Haga clic en **Componente**. Busque el conjunto de datos **Datos de precio de automóviles (Sin formato)** y colóquelo en el lienzo.
+1. Seleccione **Componente**. Busque el conjunto de datos **Datos de precio de automóviles (Sin formato)** y colóquelo en el lienzo.
 
-1. Haga clic con el botón derecho (Ctrl+clic en Mac) en el conjunto de datos **Datos de precio de automóviles (Sin formato)** en el lienzo y haga clic en **Vista previa de los datos**.
+1. Haga clic con el botón derecho (Ctrl+clic en Mac) en el conjunto de datos **Automobile price data (Raw)** en el lienzo y seleccione **Vista previa de los datos**.
 
 1. Revise el esquema *Salida del conjunto de datos* de los datos y observe que puede ver las distribuciones de las distintas columnas como histogramas.
 
@@ -86,7 +76,7 @@ Azure Machine Learning incluye un conjunto de datos de ejemplo que puede usar pa
 
 1. Desplácese de nuevo a la izquierda y seleccione el encabezado de la columna **normalized-losses** (Pérdidas normalizadas). Después, revise las estadísticas de esta columna. Tenga en cuenta que faltan bastantes valores en esta columna. Los valores que faltan limitan la utilidad de la columna para predecir la etiqueta **price**, por lo que es posible que quiera excluirla del entrenamiento.
 
-1. Cierre la ventana **Visualización de los resultados de Automobile price data (Raw)** para poder ver el conjunto de datos en el lienzo de esta forma:
+1. Cierre la ventana **Salida de datos** para poder ver el conjunto de datos en el lienzo de esta forma:
 
     ![Captura de pantalla del conjunto de datos de precios de automóviles en el lienzo del diseñador.](media/create-regression-model/dataset.png)
 
@@ -94,7 +84,7 @@ Azure Machine Learning incluye un conjunto de datos de ejemplo que puede usar pa
 
 Normalmente se aplican transformaciones de datos para preparar los datos para el modelado. En el caso de los datos de precios de automóviles, debe agregar transformaciones para solucionar los problemas que ha identificado al explorar los datos.
 
-1. En el panel **Biblioteca de recursos** de la izquierda, haga clic en **Componentes**, que contiene una amplia gama de módulos que puede usar para la transformación de datos y el entrenamiento del modelo. También puede utilizar la barra de búsqueda para localizar los módulos con rapidez.
+1. En el panel **Biblioteca de recursos** de la izquierda, seleccione **Componentes**, que contiene una amplia gama de módulos que puede usar para la transformación de datos y el entrenamiento del modelo. También puede utilizar la barra de búsqueda para localizar los módulos con rapidez.
 
 1. Busque un módulo **Seleccionar columnas del conjunto de datos** y colóquelo en el lienzo, debajo del módulo **Datos de precio de automóviles (Sin formato)**. Después, conecte la salida de la parte inferior del módulo **Automobile price data (Raw)** a la entrada de la parte superior del módulo **Seleccionar columnas del conjunto de datos**, de esta forma:
 
@@ -104,7 +94,7 @@ Normalmente se aplican transformaciones de datos para preparar los datos para el
 
     ![Captura de pantalla de todas las columnas menos la columna normalized_losses.](media/create-regression-model/select-columns.png)
 
-1. Haga clic en el botón **Guardar**.
+1. Seleccione **Guardar** y cierre la ventana de propiedades.
 
 En el resto de este ejercicio, aprenderá paso a paso cómo crear una canalización similar a la siguiente:
 
@@ -114,7 +104,7 @@ Siga los pasos restantes, y use la imagen como referencia a medida que agrega y 
 
 1. En el panel**Biblioteca de recursos**, busque un módulo **Limpiar datos que faltan** y colóquelo en el módulo **Seleccionar columnas del conjunto de datos** en el lienzo. Después, conecte la salida del módulo **Seleccionar columnas del conjunto de datos** a la entrada del módulo **Limpiar datos que faltan**.
 
-1. Haga doble clic en el módulo **Limpiar datos que faltan** y, en el panel de la derecha, haga clic en **Editar columna**. Después, en la ventana **Columnas para eliminar**, seleccione **Con reglas**, en la lista **Incluir** seleccione **Nombres de columna** y, en el cuadro de nombres de columna, escriba **bore**, **stroke** y **horsepower** de esta forma:
+1. Haga doble clic en el módulo **Limpiar datos que faltan** y, en el panel de la derecha, seleccione **Editar columna**. Después, en la ventana **Columnas para eliminar**, seleccione **Con reglas**, en la lista **Incluir** seleccione **Nombres de columna** y, en el cuadro de nombres de columna, escriba **bore**, **stroke** y **horsepower** de esta forma:
 
     ![Captura de pantalla que muestra la selección de las columnas bore, stroke y horsepower.](media/create-regression-model/clean-missing-values.png)
 
@@ -155,17 +145,17 @@ Para aplicar las transformaciones de datos, debe ejecutar la canalización.
 
     ![Captura de pantalla del conjunto de datos con los módulos de transformación de datos.](media/create-regression-model/data-transforms.png)
 
-1. Seleccione **Enviar**y cree un nuevo experimento denominado **mslearn-auto-training** en el clúster de proceso.
+1. Seleccione **Configurar y enviar** en la parte superior de la página para abrir el diálogo **Configurar trabajo de canalización**.
 
-1. Espere a que finalice la ejecución, lo que puede tardar 5 minutos o más.
+1. En la página **Aspectos básicos** seleccione **Crear nuevo** y llame al experimento **mslearn-auto-training**, a continuación, seleccione **Siguiente**.
 
-    ![Captura de pantalla de la biblioteca de recursos para diseñadores con el trabajo completado y el botón de detalles del trabajo a continuación.](media/create-regression-model/completed-job.png)
+1. En la página **Entradas y salidas** seleccione **Siguiente** sin hacer cambios.
 
-    Observe que el panel izquierdo está ahora en el panel **Trabajos enviados**. Sabrá cuándo se completa la ejecución porque el estado del trabajo cambiará a **Completado**. 
+1. En la página **Configuración de runtime** aparece un error porque no tiene un proceso predeterminado para ejecutar la canalización. En la lista desplegable **Seleccionar tipo de proceso**, seleccione *Clúster de proceso* y en la lista desplegable **Seleccionar clúster de proceso de Azure ML** seleccione el clúster de proceso que acaba de crear.
 
-1. Una vez completada la ejecución, haga clic en **Detalles del trabajo**. Se abrirá una nueva pestaña y verá los componentes que se han completado con marcas de verificación como esta:
+1. Seleccione **Siguiente** para revisar el trabajo de canalización y, a continuación, seleccione **Enviar** para ejecutar la canalización de entrenamiento.
 
-    ![Captura de pantalla del conjunto de datos con módulos en estado de trabajo completado.](media/create-regression-model/normalize-complete.png)
+1. Espere unos minutos hasta que finalice la ejecución. Para comprobar el estado del trabajo, seleccione **Trabajos** en **Recursos**. Desde ahí, seleccione el trabajo **Auto Price Training**.
 
 Ahora el conjunto de datos está preparado para el entrenamiento del modelo. Cierre la ventana Detalles del trabajo para volver a la canalización.
 
@@ -180,11 +170,11 @@ Después de haber usado transformaciones de datos para preparar los datos, puede
     >**Consejo** Use la barra de búsqueda para localizar los módulos con rapidez. 
 
 1. Seleccione el módulo **Dividir datos** y configure sus valores como se indica a continuación:
-    * **Modo de división**: dividir filas
-    * **Fracción de filas del primer conjunto de datos de salida**: 0,7
-    * **División aleatoria**: True
-    * **Valor de inicialización aleatorio**: 123
-    * **División estratificada**: falso
+    - **Modo de división**: dividir filas
+    - **Fracción de filas del primer conjunto de datos de salida**: 0,7
+    - **División aleatoria**: True
+    - **Valor de inicialización aleatorio**: 123
+    - **División estratificada**: falso
 
 1. En el panel **Biblioteca de recursos**, busque y coloque un módulo **Entrenar modelo** en el lienzo, en el módulo **Dividir datos**. Después, conecte la salida de *Conjunto de datos de resultados 1* (izquierda) del módulo **Dividir datos** a la entrada *Conjunto de datos* (derecha) del módulo **Entrenar modelo**.
 
@@ -208,21 +198,21 @@ Después de haber usado transformaciones de datos para preparar los datos, puede
 
 Ya está a punto para ejecutar la canalización de entrenamiento y entrenar el modelo.
 
-1. Seleccione **Enviar** y ejecute la canalización mediante el experimento existente denominado **mslearn-auto-training**.
+1. Seleccione **Configurar y enviar** y ejecute la canalización mediante el experimento existente llamado **mslearn-auto-training**.
 
-1. La ejecución del experimento tardará 5 minutos o más en completarse. Cuando se haya completado la ejecución del experimento, seleccione **Detalles del trabajo**. Se le redirigirá a una nueva pestaña.
+1. La ejecución del experimento tardará 5 minutos o más en completarse. Vuelva a la página **Trabajos** y seleccione la ejecución más reciente del trabajo **Auto Price Training**.
 
-1. En la nueva ventana, haga clic con el botón derecho en el módulo **Puntuar modelo** y seleccione **Vista previa de los datos** y, a continuación, en **Conjunto de datos puntuado** para ver los resultados.
+1. Cuando se complete la ejecución del experimento, haga clic con el botón derecho en el módulo **Puntuar modelo**, seleccione **Vista previa de los datos** y, a continuación, en **Conjunto de datos puntuado** para ver los resultados.
 
 1. Desplácese a la derecha y observe que junto a la columna **price** (que contiene los valores reales conocidos de la etiqueta) hay una nueva columna denominada **Etiquetas puntuadas**, que contiene los valores de etiqueta pronosticados.
 
-1. Cierre la pestaña**Score Model result visualization*** (Visualización del resultado de Puntuar modelo).
+1. Cierre la pestaña **scored_dataset**.
 
 El modelo predice valores para la etiqueta **price**, ¿pero qué fiabilidad tienen sus predicciones? Para valorarlo, tendrá que evaluar el modelo.
 
 ## Evaluación de modelo
 
-Una manera de evaluar un modelo de regresión es comparar las etiquetas previstas con las etiquetas reales del conjunto de datos de validación que se mantiene durante el entrenamiento. Otra manera es comparar el rendimiento de varios modelos.
+Una manera de evaluar un modelo de regresión es comparar las etiquetas previstas con las etiquetas reales del conjunto de datos de validación que se retuvo durante el entrenamiento. Otra manera es comparar el rendimiento de varios modelos.
 
 1. Abra la canalización **Auto Price Training** que ha creado.
 
@@ -232,11 +222,11 @@ Una manera de evaluar un modelo de regresión es comparar las etiquetas prevista
 
     ![Captura de pantalla de la adición del módulo Evaluar modelo al módulo Puntuar modelo.](media/create-regression-model/evaluate.png)
 
-1. Seleccione **Enviar** y ejecute la canalización mediante el experimento existente denominado **mslearn-auto-training**.
+1. Seleccione **Configurar y enviar** y ejecute la canalización mediante el experimento existente llamado **mslearn-auto-training**.
 
-1. Espere a que se complete la ejecución del experimento.
+1. Esta ejecución del experimento tardará un par de minutos en completarse. Vuelva a la página **Trabajos** y seleccione la ejecución más reciente del trabajo **Auto Price Training**.
 
-    ![Captura de pantalla de una ejecución de experimento completa.](media/create-regression-model/completed-job.png)
+1. Cuando se haya completado la ejecución del experimento, haga clic con el botón derecho en el módulo **Evaluar modelo** y seleccione **Vista previa de los datos** y, a continuación, **Resultados de evaluación**.
 
 1. Cuando se haya completado la ejecución del experimento, seleccione **Detalles del trabajo**, que abrirá otra pestaña. Busque y haga clic con el botón derecho en el módulo **Evaluar modelo**. Seleccione **Vista previa de los datos** y, a continuación, **Resultados de evaluación**.
 
@@ -254,27 +244,22 @@ Cuando haya identificado un modelo con métricas de evaluación que se ajusten a
 
 ## Creación y ejecución de una canalización de inferencia
 
-1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-auto-training** y, después, la canalización **mslearn-auto-training**. 
-
-    ![Captura de pantalla de los trabajos del menú de la izquierda. Seleccione los trabajos y, a continuación, seleccione el nombre de su experimento.](media/create-regression-model/jobs-tab.png)
-
-1. Busque el menú situado encima del lienzo y haga clic en **Create inference pipeline (Crear canalización de inferencia)**. Es posible que tenga que acceder a la pantalla completa y hacer clic en el icono de tres puntos **...** en la esquina superior derecha de la pantalla para buscar **Create inference pipeline (Crear canalización de inferencia)** en el menú.  
+1. Busque el menú situado encima del lienzo y seleccione **Crear canalización de inferencia**. Es posible que tenga que acceder a la pantalla completa y hacer clic en el icono de tres puntos **...** en la esquina superior derecha de la pantalla para buscar **Create inference pipeline (Crear canalización de inferencia)** en el menú.  
 
     ![Captura de pantalla de la ubicación de Crear canalización de inferencia.](media/create-regression-model/create-inference-pipeline.png)
 
-1. En la lista desplegable **Crear canalización de inferencia**, haga clic en **Canalización de inferencia en tiempo real**. Después de unos segundos, se abrirá una versión nueva de la canalización denominada **Entrenamiento de precios automático-inferencia en tiempo real**.
-
-    *Si la canalización no incluye los módulos**Entrada de servicio web** y **Salida de servicio web**, vuelva a la página **Diseñador** y, después, abra de nuevo la canalización **Entrenamiento de precios automático-inferencia en tiempo real**.*
+1. En la lista desplegable **Crear canalización de inferencia**, seleccione **Canalización de inferencia en tiempo real**. Después de unos segundos, se abrirá una versión nueva de la canalización denominada **Entrenamiento de precios automático-inferencia en tiempo real**.
 
 1. Cambie el nombre de la nueva canalización a **Predicción de precios automática** y después revísela. Contiene una entrada de servicio web para los nuevos datos que se van a enviar y una salida de servicio web para devolver los resultados. Algunas de las transformaciones y los pasos de entrenamiento forman parte de esta canalización. El modelo entrenado se usará para puntuar los nuevos datos.
 
-    Va a realizar los cambios siguientes en la canalización de inferencia en los pasos 5 a 9 siguientes:
+    Va a realizar los siguientes cambios en la canalización de inferencia en los pasos siguientes:
 
     ![Captura de pantalla de una canalización de inferencia con los cambios indicados.](media/create-regression-model/inference-changes.png)
 
    Use la imagen como referencia a medida que modifique la canalización en los pasos siguientes.
 
-1. La canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el conjunto de datos **Automobile price data (Raw)** de la canalización de entrenamiento. Pero estos datos de entrada incluyen la etiqueta **price** que predice el modelo, lo que no resulta intuitivo incluir en los nuevos datos de automóvil para los que todavía no se ha realizado una predicción del precio. Elimine este módulo y reemplácelo por un módulo **Escribir los datos manualmente** de la sección **Entrada y salida de datos**, que contiene los siguientes datos CSV, que incluyen valores de características sin etiquetas para tres automóviles (copie y pegue todo el bloque de texto):
+1. La canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el conjunto de datos **Automobile price data (Raw)** de la canalización de entrenamiento. Pero estos datos de entrada incluyen la etiqueta **price** que predice el modelo, lo que no resulta intuitivo incluir en los nuevos datos de automóvil para los que todavía no se ha realizado una predicción del precio. Elimine este módulo y reemplácelo con un módulo **Introducir datos manualmente** de la sección **Entrada y salida de datos**.
+1. Edite el módulo **Introducir datos manualmente** e introduzca los siguientes datos CSV, que incluyen valores de características sin etiquetas de tres coches (copie y pegue el bloque de texto entero):
 
     ```CSV
     symboling,normalized-losses,make,fuel-type,aspiration,num-of-doors,body-style,drive-wheels,engine-location,wheel-base,length,width,height,curb-weight,engine-type,num-of-cylinders,engine-size,fuel-system,bore,stroke,compression-ratio,horsepower,peak-rpm,city-mpg,highway-mpg
@@ -283,7 +268,7 @@ Cuando haya identificado un modelo con métricas de evaluación que se ajusten a
     1,NaN,alfa-romero,gas,std,two,hatchback,rwd,front,94.5,171.2,65.5,52.4,2823,ohcv,six,152,mpfi,2.68,3.47,9,154,5000,19,26
     ```
 
-1. Conecte el nuevo módulo **Escribir los datos manualmente** a la misma entrada **conjunto de datos** del módulo **Seleccionar columnas del conjunto de datos** como **Entrada de servicio web**.
+1. Conecte el nuevo módulo **Escribir los datos manualmente** a la misma entrada **Conjunto de datos** del módulo **Seleccionar columnas del conjunto de datos** como **Entrada de servicio web**.
 
 1. Ahora que ha cambiado el esquema de los datos entrantes para excluir el campo** price**, tendrá que quitar todos los usos explícitos de este campo en los módulos restantes. Seleccione el módulo **Seleccionar columnas del conjunto de datos** y, después, en el panel Configuración, edite las columnas para quitar el campo **price**.
 
@@ -293,18 +278,20 @@ Cuando haya identificado un modelo con métricas de evaluación que se ajusten a
     - Elimine la conexión entre el módulo **Puntuar modelo** y **Salida de servicio web**.
     - Agregue un módulo **Ejecutar script de Python** desde la sección **Python Language (Lenguaje Python)** y reemplace todo el script de Python predeterminado por el código siguiente (que solo selecciona la columna **Scored Labels** y le cambia el nombre por **predicted_price**):
 
-```Python
-import pandas as pd
+    ```Python
+    import pandas as pd
 
-def azureml_main(dataframe1 = None, dataframe2 = None):
+    def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['Scored Labels']]
-    scored_results.rename(columns={'Scored Labels':'predicted_price'},
+        scored_results = dataframe1[['Scored Labels']]
+        scored_results.rename(columns={'Scored Labels':'predicted_price'},
                         inplace=True)
-    return scored_results
-```
+     return scored_results
+    ```
 
-1. Conecte la salida del módulo **Puntuar modelo** a la entrada **Conjunto de datos 1** (en el extremo izquierdo) del módulo **Ejecutar script de Python**, y conecte la salida del módulo **Ejecutar script de Python** a **Salida del servicio web**.
+1. Conecte la salida del módulo **Puntuar modelo** a la entrada del **Dataset1** (a la izquierda) del **Script de ejecución de Python**.
+
+1. Conecte la salida **Conjunto de datos resultante** (izquierda) del módulo **Ejecutar script de Python** al módulo **Salida de servicio web**.
 
 1. Compruebe que la canalización tiene un aspecto similar a la imagen siguiente:
 
@@ -312,9 +299,11 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 1. Envíe la canalización como un nuevo experimento denominado **mslearn-auto-inference** en el clúster de proceso. El experimento puede tardar un tiempo en ejecutarse.
 
-1. Cuando se haya completado la canalización, seleccione **Detalles del trabajo**. En la nueva pestaña, haga clic con el botón derecho en el módulo **Ejecutar script de Python**. Seleccione **Vista previa de datos** y luego **Conjunto de datos de resultado** para ver los precios previstos de los tres automóviles en los datos de entrada.
+1. Vuelva a la página **Trabajos** y seleccione la ejecución más reciente del trabajo **Auto Price Training** (la relacionada con *mslearn-auto-inference experiment*).
 
-1. A continuación, cierre la pstaña de visualización.
+1. Cuando se haya completado la canalización, haga clic con el botón derecho en el módulo **Ejecutar script de Python**. Seleccione **Vista previa de datos** y luego **Conjunto de datos de resultado** para ver los precios previstos de los tres automóviles en los datos de entrada.
+
+1. Cierre la pestaña **Result_Dataset**.
 
 La canalización de inferencia predice los precios de los automóviles en función de sus características. Ya está a punto para publicar la canalización a fin de que las aplicaciones cliente la puedan usar.
 
@@ -326,22 +315,16 @@ Después de crear y probar una canalización de inferencia para la inferencia en
 
 ## Implementación de un servicio
 
-1. Vea la canalización de inferencia **Predicción de precios automática** que ha creado en la unidad anterior.
-
-1. Seleccione **Detalles del trabajo** en el panel izquierdo, lo que abrirá una segunda pestaña.
-
-    ![Captura de pantalla de los detalles del trabajo junto al trabajo completado.  ](media/create-regression-model/completed-job-inference.png)
-
-1. En la nueva pestaña, seleccione **Implementar**.
+1. En la página del trabajo **Predict Auto Price**, seleccione **Implementar** en la barra de menús superior.
 
     ![Captura de pantalla del botón Implementar para la canalización de inferencia Predict Auto Price.](media/create-regression-model/deploy-screenshot.png)
 
-1. En la pantalla de configuración, seleccione **Implementar un nuevo punto de conexión en tiempo real** con la siguiente configuración:
-    -  **Nombre**: predict-auto-price
-    -  **Descripción**: regresión de precios automática.
+1. En la pantalla de configuración, seleccione **Implementar un nuevo punto de conexión en tiempo real** y use siguiente configuración:
+    - **Nombre**: predict-auto-price
+    - **Descripción**: regresión de precios automática.
     - **Tipo de proceso**: instancia de Azure Container.
 
-1. Espere unos minutos para que se implemente el servicio web. El estado de implementación se muestra en la parte superior izquierda de la interfaz del diseñador.
+1. Seleccione **Implementar** y espere unos minutos a que el servicio web se implemente.
 
 ## Probar el servicio
 
@@ -349,7 +332,7 @@ Después de crear y probar una canalización de inferencia para la inferencia en
 
     ![Captura de pantalla de la ubicación de la opción Puntos de conexión en el panel izquierdo.](media/create-regression-model/endpoints-lab.png)
 
-1. Cuando se abra el punto de conexión **predict-auto-price**, seleccione la pestaña **Prueba**. Lo usaremos para probar el modelo con nuevos datos. Elimine los datos actuales en **Datos de entrada para probar el punto de conexión en tiempo real**. Copie y pegue los datos siguientes en la sección de datos:  
+1. Cuando se abra el punto de conexión **predict-auto-price**, seleccione la pestaña **Prueba**. Lo usaremos para probar el modelo con nuevos datos. Elimine los datos actuales en **Punto de conexión de prueba de datos de entrada**. Copie y pegue los datos siguientes en la sección de datos:  
 
     ```json
     {
@@ -389,7 +372,7 @@ Después de crear y probar una canalización de inferencia para la inferencia en
     }
     ```
 
-1. Seleccione **Probar**. En la parte derecha de la pantalla, debería ver la salida **"predicted_price"**. La salida es el precio previsto para un vehículo con las características de entrada concretas especificadas en los datos. 
+1. Seleccione **Probar**. En la parte derecha de la pantalla, debería ver la salida **"predicted_price"**. La salida es el precio previsto para un vehículo con las características de entrada concretas especificadas en los datos.
 
     ![Captura de pantalla del panel Prueba.](media/create-regression-model/test-interface.png)
 

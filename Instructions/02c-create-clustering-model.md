@@ -52,49 +52,39 @@ lab:
 
 El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede continuar con el siguiente paso.
 
-## Creación de una canalización en el diseñador
+## Crear una canalización y agregar un conjunto de datos
 
 Para empezar a trabajar con el diseñador de Azure Machine Learning, primero debe crear una canalización.
 
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Autor**) y seleccione el signo más para crear una canalización.
+1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Diseñador** (en **Creación**) y seleccione **+** para crear una canalización.
 
-1. En la parte superior derecha de la pantalla, seleccione **Configuración**. Si el panel **Configuración** no está visible, seleccione el icono de la rueda dentada situado junto al nombre de la canalización en la parte superior.
+1. Cambie el nombre del borrador (**Pipeline-Created-on-* date***) a **Train Penguin Clustering**.
 
-1. En **Configuración**, tendrá que especificar un destino de proceso en el que ejecutar la canalización. En **Select compute type (Seleccionar tipo de proceso)**, seleccione **Clúster de proceso**. Después, en **Select Azure ML compute cluster (Seleccionar tipo de proceso de Azure ML)** , seleccione el clúster de proceso que creó anteriormente.
+    En Azure Machine Learning, los datos para el entrenamiento de modelos y otras operaciones se encapsulan normalmente en un objeto denominado *conjunto de datos*. En este módulo, usará un conjunto de datos que incluye observaciones de tres especies de pingüinos.
 
-1. En **Configuración**, en **Detalles del borrador**, cambie el nombre del borrador (**Pipeline-Created-on-* date***) a **Train Penguin Clustering**.
+1. Vea la página **Datos** (en **Activos**). La página Datos contiene archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning.
 
-1. Seleccione el *icono de cierre* en la esquina superior derecha del panel de **Configuración** para cerrarlo y, a continuación, seleccione **Guardar**.
-
-    ![Captura de pantalla del panel de configuración de Machine Learning Studio.](media/create-clustering-model/create-pipeline-help.png)
-
-## Crear un conjunto de datos
-
-En Azure Machine Learning, los datos para el entrenamiento de modelos y otras operaciones se encapsulan normalmente en un objeto denominado *conjunto de datos*. En este módulo, usará un conjunto de datos que incluye observaciones de tres especies de pingüinos.
-
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Vea la página **Datos** (en **Activos**). La página Datos contiene archivos de datos o tablas específicos con los que tiene previsto trabajar en Azure Machine Learning. También puede crear conjuntos de datos desde esta página.
-
-1. En la página **Datos**, en la pestaña **Recursos de datos**, seleccione **Crear**. A continuación, configure un recurso de datos con las siguientes opciones:
-    * **Tipo de datos**:
-        * **Nombre**: penguin-data
-        * **Descripción**: datos de pingüinos
-        * **Tipo de conjunto de datos**: tabular
-    * **Origen de datos**: desde archivos web
-    * **Dirección URL web**: 
-        * **Dirección URL web**: https://aka.ms/penguin-data
-        * **Omitir validación de datos**: *no seleccionar*.
-    * **Configuración**:
-        * **Formato de archivo**: delimitado
-        * **Delimitador**: coma
-        * **Codificación**: UTF-8
-        * **Encabezados de columna**: solo el primer archivo tiene encabezados
-        * **Omitir filas**: ninguno
-        * **Dataset contains multi-line data (El conjunto de datos contiene datos de varias líneas)**: *no seleccionar*
-    * **Esquema**:
-        * incluir todas las columnas que no sean **Ruta de acceso**
-        * Revisar los tipos detectados automáticamente
-    * **Revisar**
-        * Seleccione **Crear**
+1. En la página **Datos**, en la pestaña **Recursos de datos**, seleccione **+ Crear**. A continuación, configure un recurso de datos con las siguientes opciones:
+    - **Tipo de datos**:
+        - **Nombre**: penguin-data
+        - **Descripción**: datos de pingüinos
+        - **Tipo de conjunto de datos**: tabular
+    - **Origen de datos**: desde archivos web
+    - **Dirección URL web**: 
+        - **Dirección URL web**: https://aka.ms/penguin-data
+        - **Omitir validación de datos**: *no seleccionar*.
+    - **Configuración**:
+        - **Formato de archivo**: delimitado
+        - **Delimitador**: coma
+        - **Codificación**: UTF-8
+        - **Encabezados de columna**: solo el primer archivo tiene encabezados
+        - **Omitir filas**: ninguno
+        - **Dataset contains multi-line data (El conjunto de datos contiene datos de varias líneas)**: *no seleccionar*
+    - **Esquema**:
+        - incluir todas las columnas que no sean **Ruta de acceso**
+        - Revisar los tipos detectados automáticamente
+    - **Revisar**
+        - Seleccione **Crear**
 
 1. Después de crear el conjunto de datos, ábralo y vea la página **Explorar** para obtener una muestra de los datos. Estos datos representan las medidas de longitud y profundidad de la parte más prominente (pico), la longitud de la aleta y la masa corporal de varias observaciones de pingüinos. El conjunto de datos representa tres especies de pingüino: *de Adelia*, *papúa* y *barbijo*.
 
@@ -102,19 +92,17 @@ En Azure Machine Learning, los datos para el entrenamiento de modelos y otras op
 
 ### Carga de datos al lienzo
 
-1. Vuelva a la canalización seleccionando **Diseñador** en el menú de la izquierda. En la página **Diseñador**, seleccione **train penguin clustering (Entrenar clústeres de pingüinos**).
+1. Vuelva a la canalización seleccionando **Diseñador** en el menú de la izquierda. En la página **Designer**, seleccione el borrador de canalización **Train Penguin Clustering**.
 
 1. Junto al nombre de la canalización en el lado izquierdo, seleccione el icono de flechas para expandir el panel si está contraído. El panel debería abrirse de forma predeterminada en el **Panel biblioteca**, indicado por el icono de libros situado en la parte superior del panel. Tenga en cuenta que hay una barra de búsqueda para buscar activos. Encontrará dos botones: **Datos** y **Componentes**.
 
     ![Captura de pantalla de la ubicación de la biblioteca de recursos para diseñadores, la barra de búsqueda y el icono de datos.](media/create-clustering-model/designer-asset-library-data.png)
 
-1. Haga clic en **Datos**. Busque y coloque el conjunto de datos **penguin-data** en el lienzo.
+1. Seleccione **Datos**, busque el conjunto de datos **penguin-data** y colóquelo en el lienzo.
 
 1. Haga clic con el botón derecho (Ctrl+clic en Mac) en el conjunto de datos **penguin-data** en el lienzo y haga clic en **Vista previa de los datos**.
 
-1. Revise el esquema *Perfil* de los datos y observe que puede ver las distribuciones de las distintas columnas como histogramas. A continuación, seleccione la columna **CulmenLength**. El conjunto de datos debería tener un aspecto similar al siguiente:
-
-    ![Visualización del conjunto de datos penguin-data que muestra sus columnas y algunos datos de ejemplo.](media/create-clustering-model/penguin-visualization.png)
+1. Seleccione la pestaña *Perfil*, observando que puede ver las distribuciones de las distintas columnas es histogramas.
 
 1. Tenga en cuenta las siguientes características del conjunto de datos:
 
@@ -127,11 +115,11 @@ En Azure Machine Learning, los datos para el entrenamiento de modelos y otras op
     - Faltan dos valores en la columna **CulmenLength** (también faltan dos valores en las columnas **CulmenDepth**, **FlipperLength** y **BodyMass**).
     - Los valores de las medidas están en diferentes escalas (de decenas de milímetros a miles de gramos).
 
-1. Cierre la visualización del conjunto de datos para poder ver el conjunto de datos en el lienzo de la canalización.
+1. Cierre la página **DataOutput** para poder ver el conjunto de datos en el lienzo de la canalización.
 
 ## Aplicación de transformaciones
 
-1. En el panel **Biblioteca de recursos** de la izquierda, haga clic en **Componentes**, que contiene una amplia gama de módulos que puede usar para la transformación de datos y el entrenamiento del modelo. También puede utilizar la barra de búsqueda para localizar los módulos con rapidez.
+1. En el panel **Biblioteca de recursos** de la izquierda, seleccione **Componentes** (que contiene una amplia gama de módulos que puede usar para la transformación de datos y el entrenamiento del modelo). También puede utilizar la barra de búsqueda para localizar los módulos con rapidez.
 
     ![Captura de pantalla de la ubicación de la biblioteca de recursos para diseñadores, la barra de búsqueda y el icono de componentes.](media/create-clustering-model/designer-asset-library-components.png)
 
@@ -143,17 +131,17 @@ En Azure Machine Learning, los datos para el entrenamiento de modelos y otras op
 
     ![Captura de pantalla que muestra cómo incluir los nombres de las columnas CulmenLength, CulmenDepth, FlipperLength y BodyMass.](media/create-clustering-model/select-columns.png)
 
-1. Cierre la configuración del módulo **Seleccionar columnas en un conjunto de datos** para volver al lienzo del diseñador.
+1. Seleccione **Guardar**, después cierre el menú **Seleccionar columnas en el conjunto de datos** para volver al lienzo del diseñador.
 
-1. En la **Biblioteca de recursos**, busque un módulo **Limpiar datos que faltan** y colóquelo en el lienzo, debajo del módulo **Seleccionar columnas en un conjunto de datos**, y conéctelos de la manera siguiente:
+1. En la **Biblioteca de recursos**, busque un módulo **Limpiar datos que faltan** y colóquelo en el lienzo, debajo del módulo **Seleccionar columnas en el conjunto de datos**, y conéctelos de la manera siguiente:
 
     ![Captura de pantalla que muestra cómo conectar el módulo Seleccionar columnas del conjunto de datos al módulo Limpiar datos que faltan.](media/create-clustering-model/clean-missing-data.png)
 
-1. Haga doble clic en el módulo **Limpiar datos que faltan** y, en el panel de configuración de la derecha, haga clic en **Editar columna**. A continuación, en la ventana **Columnas para eliminar**, seleccione **Con reglas** e incluya **Todas las columnas**, así:
+1. Haga doble clic en el módulo **Limpiar datos que faltan** y, en el panel de configuración de la derecha, seleccione **Editar columna**. A continuación, en la ventana **Columnas para eliminar**, seleccione **Con reglas** e incluya **Todas las columnas**, así:
 
     ![Captura de pantalla que muestra cómo usar la opción Con reglas para seleccionar todas las columnas.](media/create-clustering-model/normalize-columns.png)
 
-1. Con el módulo **Limpiar datos que faltan** aún seleccionado, en el panel Configuración, establezca las siguientes opciones de configuración:
+1. Seleccione **Guardar** y, después, en el panel de configuración, establezca las siguientes opciones de configuración:
     - **Relación mínima de valores que faltan**: 0,0
     - **Relación máxima de valores que faltan**: 1,0
     - **Modo de limpieza**: quitar toda la fila
@@ -166,31 +154,36 @@ En Azure Machine Learning, los datos para el entrenamiento de modelos y otras op
 
     ![Captura de pantalla que muestra cómo seleccionar todas las columnas.](media/create-clustering-model/normalize-columns.png)
 
-1. Cierre la configuración del módulo **Normalizar datos** para volver al lienzo del diseñador.
+1. Seleccione **Guardar**, después cierre la configuración del módulo **Normalizar datos** para volver al lienzo del diseñador.
 
 ## Ejecución de la canalización
 
 Para aplicar las transformaciones de datos, debe ejecutar la canalización como un experimento.
 
-1. Seleccione **Enviar** y ejecute la canalización como un **nuevo experimento** denominado **mslearn-penguin-training** en el clúster de proceso.
+1. Seleccione **Configurar y enviar** en la parte superior de la página para abrir el diálogo **Configurar trabajo de canalización**.
 
-1. Espere a que finalice. Esto puede tardar cinco minutos o más.
+1. En la página **Aspectos básicos** seleccione **Crear nuevo** y llame al experimento **mslearn-penguin-training**, a continuación, seleccione **Siguiente**.
 
-    ![Captura de pantalla de la biblioteca de recursos para diseñadores con el trabajo completado y el botón de detalles del trabajo a continuación.](media/create-clustering-model/completed-job.png)
+1. En la página **Entradas y salidas** seleccione **Siguiente** sin hacer cambios.
 
-    Observe que el panel izquierdo está ahora en el panel **Trabajos enviados**. Sabrá cuándo se completa la ejecución porque el estado del trabajo cambiará a **Completado**.
+1. En la página **Configuración de runtime** aparece un error porque no tiene un proceso predeterminado para ejecutar la canalización. En la lista desplegable **Seleccionar tipo de proceso**, seleccione *Clúster de proceso* y en la lista desplegable **Seleccionar clúster de proceso de Azure ML** seleccione el clúster de proceso que acaba de crear.
+
+1. Seleccione **Siguiente** para revisar el trabajo de canalización y, a continuación, seleccione **Enviar** para ejecutar la canalización de entrenamiento.
+
+1. Espere a que finalice. Esto puede tardar cinco minutos o más. Para comprobar el estado del trabajo, seleccione **Trabajos** en **Recursos**. Desde ahí, seleccione el trabajo **Train Penguin Clustering**.
+
 
 ## Visualización de los datos transformados
 
-1. Una vez completada la ejecución, el conjunto de datos ya está preparado para el entrenamiento del modelo. Haga clic en **Detalles del trabajo**. Se le dirigirá a otra ventana que mostrará los módulos de la siguiente manera:
+1. Una vez completada la ejecución, los módulos tendrán este aspecto:
 
     ![Captura de pantalla de los módulos en estado completado con una barra verde a la izquierda de cada módulo.](media/create-clustering-model/normalize-complete.png)
 
-1. En la nueva ventana, haga clic con el botón derecho en el módulo **Normalizar datos**, seleccione **Vista previa de los datos** y, después, seleccione **Conjunto de datos transformado** para ver los resultados.
+1. Haga clic con el botón derecho en el módulo **Normalizar datos**, seleccione **Vista previa de los datos** y, después, seleccione **Conjunto de datos transformado** para ver los resultados.
 
 1. Fíjese en los datos: la columna **Especie** se ha suprimido, no faltan valores y los valores de las cuatro características se han normalizado a una misma escala.
 
-1. Cierre la visualización del resultado normalizado de los datos. Vuelva a la ventana anterior de la canalización.
+1. Cierre la página **Transformed_dataset** para volver a la ejecución de canalización.
 
 Ahora que ha seleccionado y preparado las características que quiere utilizar del conjunto de datos, ya puede usarlos para entrenar un modelo de agrupación en clústeres.
 
@@ -204,18 +197,18 @@ Lleve a cabo los pasos siguientes para ampliar la canalización **Train Penguin 
 
 Siga estos pasos y use la imagen anterior como referencia a medida que agrega y configura los módulos necesarios.
 
-1. Si no está abierta, abra la canalización **Entrenar clústeres sobre pingüinos**.
+1. Vuelva a la página **Designer** y abra el borrador de canalización **Train Penguin Clustering**.
 
 1. En el panel**Biblioteca** de la izquierda, busque y coloque un módulo **Dividir datos** en el lienzo debajo del módulo **Normalizar datos**. Después, conecte la salida del módulo **Normalizar los datos** a la entrada del módulo **Dividir datos**.
 
-    >**Consejo** Use la barra de búsqueda para localizar los módulos con rapidez. 
+    >**Consejo** Use la barra de búsqueda para localizar los módulos con rapidez.
 
 1. Seleccione el módulo **Dividir datos** y configure sus valores como se indica a continuación:
-    * **Modo de división**: dividir filas
-    * **Fracción de filas del primer conjunto de datos de salida**: 0,7
-    * **División aleatoria**: True
-    * **Valor de inicialización aleatorio**: 123
-    * **División estratificada**: falso
+    - **Modo de división**: dividir filas
+    - **Fracción de filas del primer conjunto de datos de salida**: 0,7
+    - **División aleatoria**: True
+    - **Valor de inicialización aleatorio**: 123
+    - **División estratificada**: falso
 
 1. En el **Panel biblioteca**, busque y coloque un módulo **Entrenar modelo de agrupación en clústeres** en el lienzo, en el módulo **Dividir datos**. Después, conecte la salida *Conjunto de datos de resultados 1* (izquierda) del módulo **Dividir datos** a la entrada *Conjunto de datos* (derecha) del módulo **Entrenar modelo de agrupación en clústeres**.
 
@@ -223,7 +216,7 @@ Siga estos pasos y use la imagen anterior como referencia a medida que agrega y 
 
     ![Captura de pantalla que muestra cómo incluir todas las columnas en el conjunto de columnas.](media/create-clustering-model/cluster-features.png)
 
-1. El modelo que vamos a entrenar usará las características para agrupar los datos en clústeres, por lo que tendremos que entrenar el modelo mediante un algoritmo de *agrupación en clústeres*. En la **Biblioteca de recursos**, busque y coloque un módulo **Agrupación en clústeres K-Means** en el lienzo, a la izquierda del conjunto de datos **penguin-data** y por encima del módulo **Entrenar modelo de agrupación en clústeres**. Después, conecte su salida a la entrada **Modelo no entrenado** (izquierda) del módulo **Entrenar modelo de agrupación en clústeres**.
+1. El modelo que vamos a entrenar usará las características para agrupar los datos en clústeres, por lo que tendremos que entrenar el modelo mediante un algoritmo de *agrupación en clústeres*. En la **Biblioteca de recursos**, busque un módulo **Agrupación en clústeres K-Means** y colóquelo en el lienzo, a la izquierda del conjunto de datos **Dividir datos** y por encima del módulo **Entrenar modelo de agrupación en clústeres**. Después, conecte su salida a la entrada **Modelo no entrenado** (izquierda) del módulo **Entrenar modelo de agrupación en clústeres**.
 
 1. El algoritmo *K-Means* agrupa los elementos en el número de clústeres que especifique, un valor que se conoce como ***K***. Seleccione el módulo **Agrupación en clústeres K-Means** y, en el panel de la derecha, establezca el parámetro **Número de centroides** en **3**.
 
@@ -232,7 +225,7 @@ Siga estos pasos y use la imagen anterior como referencia a medida que agrega y 
     > 2. Traza los vectores de las características como puntos en el mismo espacio y asigna cada punto a su centroide más cercano.
     > 3. Mueve los centroides al centro de los puntos que tiene asignados, en función de la distancia *media*.
     > 4. Reasigna los puntos a su centroide más cercano después del movimiento.
-    > 5. Repite los pasos 3 y 4 hasta que las asignaciones de clústeres se estabilizan o hasta que se completa el número de iteraciones especificado.
+    > 5. Repitiendo los pasos c. y d. hasta que las asignaciones de clústeres se estabilicen o se complete el número de iteraciones especificado.
 
    Después de usar el 70 % de los datos para entrenar el modelo de agrupación en clústeres, puede usar el 30 % restante para hacer pruebas usando el modelo para asignar los datos a los clústeres.
 
@@ -246,15 +239,15 @@ Ya está a punto para ejecutar la canalización de entrenamiento y entrenar el m
 
     ![Captura de pantalla de una canalización de entrenamiento completa a partir de datos de pingüinos y que termina con el componente Asignar datos a clústeres.](media/create-clustering-model/k-means.png)
 
-1. Seleccione **Enviar** y ejecute la canalización mediante el experimento existente denominado **mslearn-penguin-training** en el clúster de proceso.
+1. Seleccione **Configurar y enviar** y ejecute la canalización mediante el experimento existente llamado **mslearn-penguin-training** en el clúster de proceso.
 
-1. Espere a que finalice la ejecución del experimento. Esto puede tardar cinco minutos o más.
+1. Espere a que finalice. Esto puede tardar cinco minutos o más. Compruebe el estado del trabajo seleccionando **Trabajos** en **Recursos**. Desde ahí, seleccione el trabajo **Train Penguin Clustering** más reciente.
 
-1. Cuando se haya completado la ejecución del experimento, seleccione **Detalles del trabajo**. En la nueva ventana, haga clic con el botón derecho en el módulo **Asignar datos a clústeres**, seleccione **Vista previa de los datos** y, después, seleccione **Conjunto de datos de resultados** para ver los resultados.
+1. Cuando termine la ejecución del experimento, haga clic con el botón derecho en el módulo **Asignar datos a clústeres**, seleccione **Vista previa de los datos** y, después, seleccione **Conjunto de datos de resultados** para ver los resultados.
 
 1. Desplácese hacia abajo y observe la columna **Asignaciones**, que contiene el clúster (0, 1 o 2) al que se asigna cada fila. También hay nuevas columnas que indican la distancia desde el punto que representa esta fila hasta los centros de cada uno de los clústeres; el clúster más cercano al punto es aquel al que está asignado.
 
-1. Cierre la visualización **Asignar datos a clústeres**. Vuelva a la ventana de la canalización.
+1. Cierre la visualización **Results_dataset** para volver a la ejecución de la canalización.
 
 El modelo predice clústeres para las observaciones de pingüinos, pero ¿qué fiabilidad tienen estas predicciones? Para valorarlo, tendrá que evaluar el modelo.
 
@@ -262,7 +255,7 @@ La evaluación de un modelo de agrupación en clústeres se complica por el hech
 
 ## Adición de un módulo Evaluar modelo
 
-1. Abra la canalización **Entrenar clústeres sobre pingüinos** que ha creado en la unidad anterior si todavía no está abierta.
+1. En la página **Designer**, abra el borrador de canalización **Train Penguin Clustering**.
 
 1. En la **Biblioteca de recursos**, busque y coloque un módulo **Evaluar modelo** en el lienzo, en el módulo **Asignar datos a clústeres**. Conecte la salida del módulo **Asignar datos a clústeres** a la entrada **Conjunto de datos puntuado** (izquierda) del módulo **Evaluar modelo**.
 
@@ -270,17 +263,17 @@ La evaluación de un modelo de agrupación en clústeres se complica por el hech
 
     ![Captura de pantalla que muestra cómo agregar el módulo Evaluar modelo al módulo Asignar datos a clústeres.](media/create-clustering-model/evaluate-cluster.png)
 
-1. Seleccione **Enviar** y ejecute la canalización mediante el experimento existente **mslearn-penguin-training**.
+1. Seleccione **Configurar y enviar** y ejecute la canalización mediante el experimento existente llamado **mslearn-penguin-training** en el clúster de proceso.
 
-1. Espere a que finalice la ejecución del experimento.
+1. Espere a que finalice la ejecución del experimento. Para comprobar su estado, vaya a la página **Trabajos** y seleccione el último trabajo **Train Penguin Clustering**.
 
-1. Cuando se haya completado la ejecución del experimento, seleccione **Detalles del trabajo**. Haga clic con el botón derecho en el módulo **Evaluar modelo** y seleccione **Vista previa de los datos** y, a continuación, **Resultados de la evaluación**. Revise las métricas de cada fila:
+1. Haga clic con el botón derecho en el módulo **Evaluar modelo**, seleccione **Vista previa de los datos** y, a continuación, **Resultados de la evaluación**. Revise las métricas de cada fila:
     - **Distancia media a otro centro**
     - **Distancia media al centro del clúster**
     - **Número de puntos**
     - **Distancia máxima al centro del clúster**
 
-1. Cierre la ventana **Visualización del resultado de Evaluar modelo**.
+1. Cierre la pestaña **Evaluation_results**.
 
 Ahora que tiene un modelo de agrupación en clústeres en funcionamiento, puede usarlo para asignar datos nuevos a los clústeres en una *canalización de inferencias*.
 
@@ -288,15 +281,13 @@ Después de crear y ejecutar una canalización para entrenar el modelo de clúst
 
 ## Creación de una canalización de inferencia
 
-1. En Estudio de Azure Machine Learning, expanda el panel izquierdo seleccionando el icono de menú de la parte superior izquierda de la pantalla. Haga clic en **Trabajos** (en **Activos**) para ver todos los trabajos que ha ejecutado. Seleccione el experimento **mslearn-penguin-training** y, después, la canalización **mslearn-penguin-training**. 
+1. Busque el menú situado encima del lienzo y seleccione **Crear canalización de inferencia**. Es posible que tenga que acceder a la pantalla completa y hacer clic en el icono **...** en la esquina superior derecha de la pantalla para buscar **Crear canalización de inferencia** en el menú.  
 
-1. Busque el menú situado encima del lienzo y haga clic en **Create inference pipeline (Crear canalización de inferencia)**. Es posible que tenga que acceder a la pantalla completa y hacer clic en el icono **...** en la esquina superior derecha de la pantalla para buscar **Crear canalización de inferencia** en el menú.  
+    ![Captura de pantalla de la ubicación de Crear canalización de inferencia.](media/create-clustering-model/create-inference-pipeline.png)
 
-    ![Captura de pantalla de la ubicación de Crear canalización de inferencia.](media/create-clustering-model/create-inference-pipeline.png) 
+1. En la lista desplegable **Crear canalización de inferencia**, seleccione **Canalización de inferencia en tiempo real**. Después de unos segundos, se abrirá una versión nueva de la canalización denominada **Entrenar clústeres sobre pingüinos, inferencia en tiempo real**.
 
-1. En la lista desplegable **Crear canalización de inferencia**, haga clic en **Canalización de inferencia en tiempo real**. Después de unos segundos, se abrirá una versión nueva de la canalización denominada **Entrenar clústeres sobre pingüinos, inferencia en tiempo real**.
-
-1. Vaya a **Configuración** en el menú superior derecho. En **Detalles del borrador**, cambie el nombre de la nueva canalización a **Predecir clústeres de pingüinos** y, después, revísela. Las transformaciones y el modelo de agrupación en clústeres de la canalización de entrenamiento forman parte de esta canalización. El modelo entrenado se usará para puntuar los nuevos datos. La canalización también contiene una salida de servicio web para devolver resultados. 
+1. Cambie el nombre de la nueva canalización a **Predecir clústeres de pingüinos** y, después, revísela. Las transformaciones y el modelo de agrupación en clústeres de la canalización de entrenamiento forman parte de esta canalización. El modelo entrenado se usará para puntuar los nuevos datos. La canalización también contiene una salida de servicio web para devolver resultados.
 
     Va a realizar los cambios siguientes en la canalización de inferencia:
 
@@ -309,9 +300,11 @@ Después de crear y ejecutar una canalización para entrenar el modelo de clúst
 
     Siga los pasos restantes que se indican a continuación, y use la imagen y la información anterior como referencia mientras modifica la canalización.
 
-1. La canalización no incluye automáticamente un componente **de entrada de servicio web** para los modelos creados a partir de conjuntos de datos personalizados. Busque un componente **de entrada de servicio web** desde la biblioteca de recursos y colóquelo en la parte superior de la canalización.  Conecte la salida del componente **Entrada de servicio web** a la entrada del componente **Aplicar transformación** que ya está en el lienzo.  
+1. La canalización no incluye automáticamente un componente **de entrada de servicio web** para los modelos creados a partir de conjuntos de datos personalizados. Busque un componente **de entrada de servicio web** desde la biblioteca de recursos y colóquelo en la parte superior de la canalización.  Conecte la salida del componente **Entrada del servicio web** a la entrada *Conjunto de datos* (derecha) del primer componente **Aplicar transformación** que ya hay en el lienzo.  
 
-1. La canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el conjunto de datos **penguin-data** de la canalización de entrenamiento. Sin embargo, estos datos de entrada incluyen una columna para las especies de pingüinos que el modelo no utiliza. Elimine el conjunto de datos **penguin-data** y el módulo **Seleccionar columnas en el conjunto de datos**, y reemplácelos por el módulo **Escribir manualmente los datos** de la **Biblioteca de recursos**. A continuación, modifique la configuración del módulo **Escribir manualmente los datos** para usar la siguiente entrada CSV, que contiene valores de características para tres nuevas observaciones de los pingüinos (incluidos los encabezados):
+1. La canalización de inferencia supone que los datos nuevos coincidirán con el esquema de los datos de entrenamiento originales, por lo que se incluye el conjunto de datos **penguin-data** de la canalización de entrenamiento. Sin embargo, estos datos de entrada incluyen una columna para las especies de pingüinos que el modelo no utiliza. Elimine el conjunto de datos **penguin-data** y el módulo **Seleccionar columnas en el conjunto de datos**, y reemplácelos por el módulo **Escribir manualmente los datos** de la **Biblioteca de recursos**.
+
+1. A continuación, modifique la configuración del módulo **Escribir manualmente los datos** para usar la siguiente entrada CSV, que contiene valores de características para tres nuevas observaciones de los pingüinos (incluidos los encabezados):
 
     ```CSV
     CulmenLength,CulmenDepth,FlipperLength,BodyMass
@@ -320,7 +313,7 @@ Después de crear y ejecutar una canalización para entrenar el modelo de clúst
     46.6,17.8,193,3800
     ```
 
-1. Conecte las salidas de los módulos **Entrada del servicio web** y **Escribir manualmente los datos** a la entrada del conjunto de datos (derecha) del primer módulo **Aplicar transformación**.
+1. Conecte la salida del módulo **Introducir datos manualmente** a la entrada de *Conjunto de datos* (a la derecha) del primer módulo **Aplicar transformación**.
 
 1. Elimine el módulo **Evaluar modelo**.
 
@@ -330,27 +323,23 @@ Después de crear y ejecutar una canalización para entrenar el modelo de clúst
 
 1. Envíe la canalización como un nuevo experimento denominado **mslearn-penguin-inference** en el clúster de proceso. El experimento puede tardar un tiempo en ejecutarse.
 
-1. Cuando se haya completado la canalización, seleccione **Detalles del trabajo**. En la nueva pestaña, haga clic con el botón derecho en el módulo **Asignar datos a clústeres** y seleccione **Vista previa de los datos** y seleccione **Conjunto de datos de resultados** para ver las asignaciones y métricas de clúster predichas para las tres observaciones de pingüinos en los datos de entrada.
+1. Vaya a **Trabajos** y seleccione el trabajo **Predict Penguin Clusters** más reciente con el nombre del experimento **mslearn-penguin-inference**.
+
+1. Cuando la canalización finalice, haga clic con el botón derecho en el módulo **Asignar datos a clústeres**, seleccione **Vista previa de los datos** y después **Conjunto de datos de resultados** para ver las asignaciones y métricas de clúster predichas para las tres observaciones de pingüinos en los datos de entrada.
 
 La canalización de inferencia asigna las observaciones de pingüinos a los clústeres en función de sus características. Ya está a punto para publicar la canalización a fin de que las aplicaciones cliente la puedan usar.
 
->**Nota**: En este ejercicio, implementará el servicio web en una instancia de Azure Container (ACI). Este tipo de proceso se crea dinámicamente y resulta útil para el desarrollo y las pruebas. Para la producción, debe crear un *clúster de inferencia*; esto proporciona un clúster de Azure Kubernetes Service (AKS) que ofrece más escalabilidad y seguridad.
-
 ## Implementación de un servicio
 
-1. Vea la canalización de inferencia **Predecir clústeres de pingüinos** que ha creado en la unidad anterior.
+En este ejercicio, implementará el servicio web en una instancia de Azure Container (ACI). Este tipo de proceso se crea dinámicamente y resulta útil para el desarrollo y las pruebas. Para la producción, debe crear un *clúster de inferencia*; esto proporciona un clúster de Azure Kubernetes Service (AKS) que ofrece más escalabilidad y seguridad.
 
-1. Seleccione **Detalles del trabajo** en el panel izquierdo. Se abrirá otra pestaña.
-
-    ![Captura de pantalla de los detalles del trabajo junto al trabajo completado.  ](media/create-clustering-model/completed-job-inference.png)
-
-1. En la nueva pestaña, seleccione **Implementar**.
+1. Estando en la página de ejecución de inferencia **Predict Penguin Clusters**, seleccione **Implementar** en la barra de menús superior.
 
     ![Captura de pantalla del botón Implementar para la canalización de inferencia Predict Auto Price.](media/create-clustering-model/deploy-screenshot.png)
 
-1. Implemente un nuevo punto de conexión en tiempo real con la siguiente configuración:
-    -  **Nombre**: predict-penguin-clusters
-    -  **Descripción**: permite agrupar pingüinos en clústeres.
+1. Seleccione **Implementar un nuevo punto de conexión en tiempo real** y use la siguiente configuración:
+    - **Nombre**: predict-penguin-clusters
+    - **Descripción**: permite agrupar pingüinos en clústeres.
     - **Tipo de proceso**: instancia de Azure Container.
 
 1. Espere a que se implemente el servicio web; esto puede tardar varios minutos. 
@@ -363,7 +352,7 @@ La canalización de inferencia asigna las observaciones de pingüinos a los clú
 
     ![Captura de pantalla de la ubicación de la opción Puntos de conexión en el panel izquierdo.](media/create-clustering-model/endpoints-screenshot.png)
 
-1. Lo usaremos para probar el modelo con nuevos datos. Elimine los datos actuales en **Datos de entrada para probar el punto de conexión en tiempo real**. Copie y pegue los datos siguientes en la sección de datos: 
+1. Lo usaremos para probar el modelo con nuevos datos. Elimine los datos actuales en **Datos de entrada para probar el punto de conexión en tiempo real**. Copie y pegue los datos siguientes en la sección de datos:
 
     ```JSON
     {
