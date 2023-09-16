@@ -33,29 +33,6 @@ En este ejercicio, usará un conjunto de datos de información histórica de alq
 
 > **Nota** Este módulo es uno de los muchos que hacen uso de un área de trabajo Azure Machine Learning, incluidos el resto de módulos de la ruta de aprendizaje[Microsoft Azure AI Fundamentals: exploración de las herramientas visuales para el aprendizaje automático](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Si usa su propia suscripción de Azure, le recomendamos que cree el área de trabajo una vez y la reutilice en otros módulos. A la suscripción de Azure se le cargará un importe reducido por el almacenamiento de datos, siempre y cuando el área de trabajo de Azure Machine Learning exista en la suscripción, por lo que se recomienda eliminar el área de trabajo de Azure Machine Learning cuando ya no sea necesaria.
 
-## Creación del proceso
-
-1. En [Estudio de Azure Machine Learning](https://ml.azure.com?azure-portal=true), seleccione el icono **&#8801;** (un icono de menú que se parece a una pila de tres líneas) en la parte superior izquierda para ver las distintas páginas de la interfaz (es posible que tenga que maximizar el tamaño de la pantalla). Puede usar estas páginas del panel de la izquierda para administrar los recursos del área de trabajo. Vea la página **Proceso** (en **Administrar**).
-
-1. En la página **Proceso**, seleccione la pestaña **Clústeres de proceso** y agregue un clúster de proceso nuevo con la configuración siguiente. Lo usará para entrenar un modelo de Machine Learning:
-    - **Ubicación**: *seleccione la misma que el área de trabajo. Si esa ubicación no aparece, elija la más cercana.*
-    - **Nivel de máquina virtual**: dedicado
-    - **Tipo de máquina virtual**: CPU
-    - **Tamaño de la máquina virtual**:
-        - Elija **Seleccionar de entre todas las opciones**
-        - Busque y seleccione **Standard_DS11_v2**
-    - Seleccione **Siguiente**.
-    - **Nombre del proceso**: *escriba un nombre único*.
-    - **Número mínimo de nodos**: 0
-    - **Número máximo de nodos**: 2
-    - **Segundos de inactividad antes de la reducción vertical**: 120
-    - **Habilitar el acceso SSH**: no habilitar
-    - Seleccione **Crear**
-
-> **Nota** Las instancia de proceso y los clústeres se basan en imágenes de máquina virtual de Azure estándar. Para este módulo, se recomienda la imagen *Standard_DS11_v2* para lograr el equilibrio óptimo entre el costo y el rendimiento. Si la suscripción tiene una cuota que no incluye esta imagen, elija una imagen alternativa, pero tenga en cuenta que una imagen más grande puede incurrir en un costo mayor y una imagen más pequeña puede no ser suficiente para completar las tareas. Como alternativa, pida al administrador de Azure que amplíe la cuota.
-
-El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede continuar con el siguiente paso.
-
 ## Crear un recurso de datos
 
 1. Vea los datos separados por comas en [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true), en el explorador web.
@@ -88,6 +65,16 @@ El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede
 
 > **Cita**: *Estos datos se derivan de [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) y se utilizan de acuerdo con el [contrato de licencia](https://www.capitalbikeshare.com/data-license-agreement) de los datos publicados.*
 
+## Habilitar proceso sin servidor
+
+1. En Azure Machine Learning Studio, haga clic en **Administrar características en versión preliminar** (el icono de altavoz).
+
+![Captura de pantalla del botón Administrar características en vista previa (gb) del menú.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)
+
+1. Habilite la característica "Experiencia guiada para enviar trabajos de entrenamiento con proceso sin servidor".
+
+![Captura de pantalla de la característica habilitar proceso sin servidor.](../instructions/media/use-automated-machine-learning/enable-serverless-compute.png)
+
 ## Cancelar un trabajo de aprendizaje automático automatizado
 
 Siga los pasos para ejecutar un trabajo que use el aprendizaje automático automatizado con el fin de entrenar un modelo de regresión que prediga los alquileres de bicicletas.
@@ -115,19 +102,12 @@ Siga los pasos para ejecutar un trabajo que use el aprendizaje automático autom
         - **Allowed models** (Modelos permitidos): *seleccione solo **RandomForest** y **LightGBM**: normalmente, le gustaría probar tantos como sea posible, pero cada modelo agregado aumenta el tiempo que se tarda en ejecutar el experimento*.
 
         ![Captura de pantalla de configuraciones adicionales con un cuadro alrededor de los modelos permitidos.](media/use-automated-machine-learning/allowed-models.png)
-        - **Criterio de salida**:
-            - **Training job time (hours)** (Tiempo del trabajo de entrenamiento [horas]): 0,5: *esto hace que el experimento finalice después de un máximo de 30 minutos*.
-            - **Metric score threshold** (Umbral de puntuación de métrica): 0,085: *esto hace que el experimento finalice si un modelo logra una puntuación de métrica de raíz del error cuadrático medio normalizado de 0,085 o menos*.
-        - **Simultaneidad**: *no cambiar*.
-    - **Configuración de caracterización**:
-        - **Enable featurization** (Habilitar caracterización): seleccionada: *procese previamente de forma automática las características antes del entrenamiento*.
-
-    Haga clic en **Siguiente** para ir al siguiente panel de selección.
-
-    - **Seleccione el tipo de validación y prueba**
-        - **Tipo de validación**: Automático
-        - **Recurso de datos de prueba (versión preliminar):** no se requiere ningún recurso de datos de prueba
-
+Observe que en *Ver opciones de configuración adicionales* hay una sección *Límites*. Expanda la sección para configurar los valores:
+        - **Tiempo de espera (minutos)** : 30: *finaliza el trabajo después de un máximo de 30 minutos*.
+        - **Metric score threshold** (Umbral de puntuación de métrica): 0,085: *esto hace que el experimento finalice si un modelo logra una puntuación de métrica de raíz del error cuadrático medio normalizado de 0,085 o menos*.
+        - Haga clic en **Siguiente**.
+        - **Proceso**: no se necesitan cambios aquí
+        - Haga clic en **Siguiente**.
 1. Cuando termine de enviar los detalles de la ejecución de ML automatizado, se iniciará automáticamente.
 
 1. espere a que el trabajo finalice. Este proceso puede tardar un poco. Ahora podría ser un buen momento para hacer una pausa.
@@ -219,7 +199,6 @@ Acaba de probar un servicio que está listo para conectarse a una aplicación cl
 El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure. También debe eliminar el clúster de proceso.
 
 1. En [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true), en la pestaña **Puntos de conexión**, seleccione el punto de conexión **predict-rentals**. A continuación, seleccione **Eliminar** y confirme que quiere eliminar el punto de conexión.
-2. En la página **Proceso**, en la pestaña **Clústeres de proceso**, seleccione su instancia de proceso y, luego, **Eliminar**.
 
 > **Nota:** Al eliminar el proceso, garantiza que no se cobren los recursos de proceso en la suscripción. Sin embargo, se le cobrará un importe reducido por el almacenamiento de datos, siempre que el área de trabajo de Azure Machine Learning exista en la suscripción. Si ha terminado de explorar Azure Machine Learning, puede eliminar el área de trabajo de Azure Machine Learning y los recursos asociados. Sin embargo, si planea completar cualquier otro laboratorio de esta serie, tendrá que volver a crearla.
 >
