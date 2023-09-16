@@ -155,15 +155,15 @@ Para aplicar las transformaciones de datos, debe ejecutar la canalización.
 
 1. Seleccione **Siguiente** para revisar el trabajo de canalización y, a continuación, seleccione **Enviar** para ejecutar la canalización de entrenamiento.
 
-1. Espere unos minutos hasta que finalice la ejecución. Para comprobar el estado del trabajo, seleccione **Trabajos** en **Recursos**. Desde ahí, seleccione el trabajo **Auto Price Training**.
+1. Espere unos minutos hasta que finalice la ejecución. Para comprobar el estado del trabajo, seleccione **Trabajos** en **Recursos**. Desde ahí, seleccione el trabajo **Auto Price Training**. Desde aquí, puede ver cuándo se ha completado el trabajo. Una vez completado el trabajo, el conjunto de datos ya está preparado para el entrenamiento del modelo.
 
-Ahora el conjunto de datos está preparado para el entrenamiento del modelo. Cierre la ventana Detalles del trabajo para volver a la canalización.
+1. Vaya al menú de la izquierda. En **Creación**, seleccione **Diseñador**. Después, seleccione la canalización *Entrenamiento de precios automáticos* en la lista de **canalizaciones**.
 
 ## Creación de una canalización de entrenamiento
 
 Después de haber usado transformaciones de datos para preparar los datos, puede usarlos para entrenar un modelo de Machine Learning. Siga estos pasos para ampliar la canalización **Auto Price Training**.
 
-1. Vuelva a la canalización **Entrenamiento de precios automático** que ha creado en la unidad anterior si todavía no está abierta.
+1. Asegúrese de que el menú izquierdo tiene **Diseñador** seleccionado y que ha vuelto a la canalización **Entrenamiento de precios automáticos**.
 
 1. En el panel**Biblioteca** de la izquierda, busque y coloque un módulo **Dividir datos** en el lienzo debajo del módulo **Normalizar datos**. Después, conecte la salida *Conjunto de datos transformado* (izquierda) del módulo **Normalizar los datos** a la entrada del módulo **Dividir datos**.
 
@@ -226,8 +226,6 @@ Una manera de evaluar un modelo de regresión es comparar las etiquetas prevista
 
 1. Esta ejecución del experimento tardará un par de minutos en completarse. Vuelva a la página **Trabajos** y seleccione la ejecución más reciente del trabajo **Auto Price Training**.
 
-1. Cuando se haya completado la ejecución del experimento, haga clic con el botón derecho en el módulo **Evaluar modelo** y seleccione **Vista previa de los datos** y, a continuación, **Resultados de evaluación**.
-
 1. Cuando se haya completado la ejecución del experimento, seleccione **Detalles del trabajo**, que abrirá otra pestaña. Busque y haga clic con el botón derecho en el módulo **Evaluar modelo**. Seleccione **Vista previa de los datos** y, a continuación, **Resultados de evaluación**.
 
     ![Captura de pantalla de la ubicación del módulo Evaluar modelo.](media/create-regression-model/evaluate-model-help-1.png)
@@ -288,6 +286,7 @@ Cuando haya identificado un modelo con métricas de evaluación que se ajusten a
                         inplace=True)
      return scored_results
     ```
+>**Nota**: Copiar y pegar puede introducir espacios en el script de Python que no deben estar allí. Compruebe que no hay un espacio antes de *importar* o *def* o *return*. Asegúrese de que haya una sangría de tabulación antes de *scored_results* y *scored_results.rename()* .
 
 1. Conecte la salida del módulo **Puntuar modelo** a la entrada del **Dataset1** (a la izquierda) del **Script de ejecución de Python**.
 
