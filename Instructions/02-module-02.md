@@ -105,7 +105,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
         - **Pruebas máximas**: 3
         - **Número máximo de pruebas simultáneas**: 3
         - **Número máximo de nodos**: 3
-        - **Umbral de puntuación de métrica**: 0,85: (*esto hace que el experimento finalice si un modelo logra una puntuación de métrica de raíz del error cuadrático medio normalizado de 0,085 o menos*).
+        - **Umbral de puntuación de métrica**: 0,85 (*esto hace que el experimento finalice si un modelo logra una puntuación de métrica de raíz del error cuadrático medio normalizado de 0,085 o menos*).
         - **Tiempo de expiración**: 15
         - **Tiempo de expiración de iteración**: 5
         - **Habilitación de la terminación anticipada**: *seleccionada*
