@@ -75,9 +75,12 @@ Deberá aprovisionar un recurso de **Cognitive Services** que se encuentre en la
 
 1. Haga clic en **Revisar**, y después en **Crear**. Espere a que se complete la implementación y, a continuación, vaya al recurso implementado.
 
+1. En la cuenta de Azure Storage que ha creado, en el panel de menús izquierdo, seleccione **Configuración** (en **Configuración**).
+1. Cambie la configuración de *Permitir el acceso anónimo de blobs* a **Habilitado** y, después, seleccione **Guardar**.
+
 ## Carga de documentos en Azure Storage
 
-1. En la cuenta de Azure Storage que creó, en el panel de menús izquierdo, seleccione **Contenedores**.
+1. En el panel de menús izquierdo, seleccione **Contenedores**.
 
     ![Captura de pantalla que muestra la página de información general de Storage Blob.](media/create-cognitive-search-solution/storage-blob-1.png)
 
@@ -154,14 +157,12 @@ Cuando tenga los documentos almacenados, podrá usar Azure Cognitive Search para
     > **Nota** Si aparece una advertencia que solicita una **Cadena de conexión de cuenta de almacenamiento**.
     >
     > ![Captura de pantalla que muestra la advertencia de la pantalla de conexión de la cuenta de almacenamiento, con la opción "Elegir una conexión existente" seleccionada.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
-
+    >
     > 1. Seleccione **Elegir una conexión existente**. Elija la cuenta de almacenamiento creada anteriormente.
-
-    > 1. Haga clic en **+ Contenedor** para crear un nuevo contenedor denominado **knowledge-store** con el nivel de privacidad establecido en privado y seleccione **Crear**.
-
+    > 1. Haga clic en **+ Contenedor** para crear un contenedor denominado **knowledge-store** con el nivel de privacidad establecido en **Privado** y seleccione **Crear**.
     > 1. Seleccione el contenedor **knowledge-store** y haga clic en **Seleccionar** en la parte inferior de la pantalla.
 
-1. Seleccione **Proyectos de blobs de Azure: Documento**. Aparece *Nombre del contenedor* con el valor *knowledge-store*, que se ha rellenado automáticamente. No cambie el nombre del contenedor
+1. Seleccione **Proyecciones de blobs de Azure: Documento**. Aparece *Nombre del contenedor* con el valor *knowledge-store*, que se ha rellenado automáticamente. No cambie el nombre del contenedor
 
 1. Seleccione **Siguiente: Personalizar el índice de destino**. Cambie el **Nombre del índice** a **coffee-index**.
 
