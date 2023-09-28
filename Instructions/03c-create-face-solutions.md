@@ -13,7 +13,7 @@ Para probar las funcionalidades del servicio Face, usaremos una sencilla aplicac
 
 ## Creación de un recurso de *Face API*
 
-Puede usar el servicio Face mediante la creación de un recurso de **Face**. (Face API ya no está disponible en Cognitive Services).
+Puede usar el servicio Face mediante la creación de un recurso de **Face**.
 
 Si aún no lo ha hecho, cree un recurso de **Face API** en la suscripción de Azure.
 
