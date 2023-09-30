@@ -13,15 +13,15 @@ Por ejemplo, supongamos que el minorista ficticio *Northwind Traders* ha decidid
 
 En este laboratorio, usará una aplicación de línea de comandos sencilla para ver el servicio Computer Vision en acción. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## Creación de un recurso de *Cognitive Services*
+## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Para aprovisionar el servicio Computer Vision, puede crear un recurso de **Computer Vision** o un recurso de **Cognitive Services**.
+Para aprovisionar el servicio Computer Vision, puede crear un recurso **Computer Vision** o un recurso **servicios de Azure AI**.
 
-Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripción de Azure.
+Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&amp;#65291;Crear un recurso**, busque *Cognitive Services* y cree un recurso de **Cognitive Services** con la siguiente configuración:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Cognitive Services*. Seleccione **Crear** un plan de **Cognitive Services**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
@@ -31,7 +31,7 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 1. Revise y cree el recurso y espere a que finalice la implementación. A continuación, vaya al recurso implementado.
 
-1. Vea la página **Claves y punto de conexión** del recurso de Cognitive Services. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
+1. Vea la página **Claves y punto de conexión** del recurso de servicios de Azure AI. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
 
 ## Ejecución de Cloud Shell
 
