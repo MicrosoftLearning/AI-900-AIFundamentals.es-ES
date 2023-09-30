@@ -118,7 +118,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
 
     - **Selección del tipo de proceso**: sin servidor
     - **Tipo de máquina virtual**: CPU
-    - **Nivel de máquina virtual**: prioridad baja
+    - **Nivel de máquina virtual**: dedicado
     - **Tamaño de máquina virtual**: Standard_DS3_V2
     - **Número de instancias**: 1
 
@@ -200,12 +200,11 @@ Ahora puede probar el servicio implementado.
 
     El panel de prueba tomó los datos de entrada y utilizó el modelo entrenado para devolver el número de alquileres previsto.
 
-
 Revisemos lo que ha hecho. Ha usado un conjunto de datos históricos de alquiler de bicicletas para entrenar un modelo. El modelo predice el número de alquileres de bicicletas que se espera en un día determinado, en función de las *características* estacionales y meteorológicas.
 
 ## Limpieza
 
-El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure. También debe eliminar el clúster de proceso.
+El servicio web que se ha creado se hospeda en una *instancia de Azure Container*. Si no tiene previsto experimentar con él, debe eliminar el punto de conexión para evitar el uso innecesario de Azure.
 
 1. En [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true), en la pestaña **Puntos de conexión**, seleccione el punto de conexión **predict-rentals**. A continuación, seleccione **Eliminar** y confirme que quiere eliminar el punto de conexión.
 
