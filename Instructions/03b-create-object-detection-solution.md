@@ -11,21 +11,21 @@ La *detección de objetos* es una forma de visión informática en la que se ent
 
 Por ejemplo, una iniciativa de seguridad vial podría identificar a los peatones y ciclistas como los usuarios de carreteras más vulnerables en las intersecciones de tráfico. Mediante el uso de cámaras para supervisar intersecciones, se podrían analizar imágenes de los usuarios de carreteras para detectar peatones y ciclistas con el fin de supervisar sus números o incluso cambiar el comportamiento de las señales de tráfico.
 
-El servicio cognitivo **Custom Vision** de Microsoft Azure proporciona una solución basada en la nube para la creación y publicación de modelos de detección de objetos personalizados. En Azure, puede usar el servicio Custom Vision para entrenar un modelo de detección de objetos basado en imágenes existentes. Hay dos elementos para crear una solución de detección de objetos. En primer lugar, debe entrenar un modelo para detectar la ubicación y la clase de objetos mediante imágenes etiquetadas. Después, una vez entrenado el modelo, debe publicarlo como un servicio que pueden consumir las aplicaciones.
+El servicio **Custom Vision** de Microsoft Azure proporciona una solución basada en la nube para la creación y publicación de modelos de detección de objetos personalizados. En Azure, puede usar el servicio Custom Vision para entrenar un modelo de detección de objetos basado en imágenes existentes. Hay dos elementos para crear una solución de detección de objetos. En primer lugar, debe entrenar un modelo para detectar la ubicación y la clase de objetos mediante imágenes etiquetadas. Después, una vez entrenado el modelo, debe publicarlo como un servicio que pueden consumir las aplicaciones.
 
 Para probar las funcionalidades del servicio Custom Vision para detectar objetos en imágenes, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones móviles.
 
-## Creación de un recurso de *Cognitive Services*
+## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Para usar el servicio Computer Vision, puede crear un recurso de **Computer Vision** o un recurso de **Cognitive Services**.
+Para usar el servicio Computer Vision, puede crear un recurso de **Custom Vision** o un recurso de **servicios de Azure AI**.
 
-> **Nota** No todos los recursos están disponibles en todas las regiones. Tanto si crea un recurso de Custom Vision como de Cognitive Services, para acceder a los servicios de Custom Vision, solo se pueden usar los recursos creados en [determinadas regiones](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services). Para simplificar el proceso, se selecciona previamente una región en las instrucciones de configuración siguientes.
+> **Nota** No todos los recursos están disponibles en todas las regiones. Tanto si crea un recurso de Custom Vision como de servicios de Azure AI, para acceder a los servicios de Custom Vision, solo se pueden usar los recursos creados en [determinadas regiones](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services). Para simplificar el proceso, se selecciona previamente una región en las instrucciones de configuración siguientes.
 
-Cree un recurso de **Cognitive Services** en la suscripción de Azure.
+Cree un recurso **servicios de Azure AI** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&amp;#65291;Crear un recurso**, busque *Cognitive Services* y cree un recurso de **Cognitive Services** con la siguiente configuración:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: Este de EE. UU.
@@ -35,7 +35,7 @@ Cree un recurso de **Cognitive Services** en la suscripción de Azure.
 
 1. Revise y cree el recurso y espere a que finalice la implementación. A continuación, vaya al recurso implementado.
 
-1. Vea la página **Claves y punto de conexión** del recurso de Cognitive Services. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
+1. Vea la página **Claves y punto de conexión** del recurso de servicios de Azure AI. Necesitará el punto de conexión y las claves para conectarse desde las aplicaciones cliente.
 
 ## Creación de un proyecto de Custom Vision
 
@@ -203,6 +203,3 @@ Ahora puede usar la aplicación cliente de ejemplo para detectar ciclistas y pea
 
 Esperamos que el modelo de detección de objetos haya hecho un buen trabajo para detectar peatones y ciclistas en las imágenes de prueba.
 
-## Más información
-
-En este ejercicio se muestran solo algunas de las funcionalidades del servicio Custom Vision. Para más información sobre lo que puede hacer con este servicio, consulte la [página de Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/).

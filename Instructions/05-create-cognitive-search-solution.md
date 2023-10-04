@@ -23,9 +23,9 @@ En este laboratorio:
 La solución que va a crear para Fourth Coffee requiere los siguientes recursos de su suscripción de Azure:
 
 - Un recurso de **Azure Cognitive Search** que administre el proceso de indexación y de consulta.
-- Un recurso de **Cognitive Services** que proporcione servicios de inteligencia artificial para las aptitudes que la solución de búsqueda puede usar para enriquecer los datos del origen de datos con información generada mediante inteligencia artificial.
+- Un recurso de **servicios de Azure AI** que proporcione servicios de inteligencia artificial para las aptitudes que la solución de búsqueda puede usar para enriquecer los datos del origen de datos con información generada mediante inteligencia artificial.
 
-    > **Nota** Los recursos de Azure Cognitive Search y Cognitive Services deben estar en la misma ubicación.
+    > **Nota** Los recursos de Azure Cognitive Search y servicios de Azure AI deben estar en la misma ubicación.
 
 - Una **cuenta de almacenamiento** con contenedores de blobs, que almacenará documentos sin procesar y otras colecciones de tablas, objetos o archivos.
 
@@ -45,11 +45,11 @@ La solución que va a crear para Fourth Coffee requiere los siguientes recursos 
 
 1. Una vez finalizada la implementación, seleccione **Ir al recurso**. En la página de información general de Azure Cognitive Search, puede agregar índices, importar datos y buscar índices creados.
 
-### Creación de un recurso de Cognitive Services
+### Creación de un grupo de recursos de servicios de Azure AI
 
-Deberá aprovisionar un recurso de **Cognitive Services** que se encuentre en la misma ubicación que el recurso de Azure Cognitive Search. La solución de búsqueda usará este recurso para enriquecer los datos del almacén de datos con información generada con inteligencia artificial.
+Deberá aprovisionar un recurso de **servicios de Azure AI** que se encuentre en la misma ubicación que el recurso de Azure Cognitive Search. La solución de búsqueda usará este recurso para enriquecer los datos del almacén de datos con información generada con inteligencia artificial.
 
-1. Vuelva a la página principal de Azure Portal y seleccione el botón **+ Crear un recurso**, busque *Cognitive Services* y cree un recurso de **Cognitive Services** con los valores siguientes: 
+1. Vuelva a la página principal de Azure Portal. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *el mismo grupo de recursos que el recurso de Azure Cognitive Search*.
     - **Región**: *la misma ubicación que el recurso de Azure Cognitive Search*.
@@ -67,7 +67,7 @@ Deberá aprovisionar un recurso de **Cognitive Services** que se encuentre en la
 
 1. Busque *cuenta de almacenamiento* y cree un recurso **Cuenta de almacenamiento** con la siguiente configuración:
     - **Suscripción**: *su suscripción a Azure*.
-    - **Grupo de recursos**: *el mismo grupo de recursos que el de los recursos de Azure Cognitive Search y Cognitive Services*.
+    - **Grupo de recursos**: *el mismo grupo de recursos que el de los recursos de Azure Cognitive Search y servicios de Azure AI*.
     - **Nombre de la cuenta de Storage**: *un nombre único*.
     - **Ubicación**: *elija cualquier ubicación disponible*.
     - **Rendimiento**: Estándar
@@ -126,7 +126,7 @@ Cuando tenga los documentos almacenados, podrá usar Azure Cognitive Search para
 
 1. Seleccione **Siguiente: Agregar conocimientos cognitivos (opcional)**.
 
-1. En la sección **Adjuntar Cognitive Services**, seleccione el recurso de Cognitive Services.  
+1. En la sección **Adjuntar Cognitive Services**, seleccione el recurso de servicios de Azure AI.  
 
 1. En la sección **Agregar enriquecimientos**, haga lo siguiente:
     - Cambie el **nombre del conjunto de aptitudes** a **conjunto de aptitudes-café**.
