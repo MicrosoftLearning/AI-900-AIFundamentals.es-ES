@@ -1,19 +1,19 @@
 ---
 lab:
-  title: Exploración de Cognitive Services
+  title: Explorar servicios de Azure AI
 ---
 
-# Exploración de Cognitive Services
+# Explorar servicios de Azure AI
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
-Azure Cognitive Services encapsula la funcionalidad de inteligencia artificial común que se puede clasificar en cuatro pilares principales: visión, voz, lenguaje y servicios de decisión. En este ejercicio, echará un vistazo a uno de los servicios de decisión para obtener una idea general de cómo aprovisionar y usar un recurso de Cognitive Services en una aplicación de software.
+Los servicios de Azure AI encapsulan la funcionalidad de inteligencia artificial común que se puede clasificar en cuatro pilares principales: visión, voz, lenguaje y servicios de decisión. En este ejercicio, echará un vistazo a uno de los servicios de decisión para obtener una idea general de cómo aprovisionar y usar un recurso de servicios de Azure AI en una aplicación de software.
 
-El servicio cognitivo específico que explorará en este ejercicio es *Anomaly Detector*. Anomaly Detector se usa para analizar los valores de datos a lo largo del tiempo y para detectar valores inusuales que puedan indicar un problema o un problema para una investigación más detallada. Por ejemplo, un sensor de una instalación de almacenamiento controlada por temperatura podría supervisar la temperatura cada minuto y registrar los valores medidos. Puede usar el servicio Anomaly Detector para analizar los valores de temperatura registrados y marcar cualquier que se encuentre significativamente fuera del intervalo normal de temperaturas esperadas.
+El servicio de Azure AI específico que explorará en este ejercicio es *Anomaly Detector*. Anomaly Detector se usa para analizar los valores de datos a lo largo del tiempo y para detectar valores inusuales que puedan indicar un problema o un problema para una investigación más detallada. Por ejemplo, un sensor de una instalación de almacenamiento controlada por temperatura podría supervisar la temperatura cada minuto y registrar los valores medidos. Puede usar el servicio Anomaly Detector para analizar los valores de temperatura registrados y marcar cualquier que se encuentre significativamente fuera del intervalo normal de temperaturas esperadas.
 
 Para probar las funcionalidades del servicio de detección de anomalías, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-> **Nota** El objetivo de este ejercicio es obtener una idea general de cómo se aprovisionan y usan cognitive Services. Anomaly Detector se usa como ejemplo, pero no se espera que obtenga un conocimiento completo de la detección de anomalías en este ejercicio.
+> **Nota** El objetivo de este ejercicio es obtener una idea general de cómo se aprovisionan y usan los servicios de Azure AI. Anomaly Detector se usa como ejemplo, pero no se espera que obtenga un conocimiento completo de la detección de anomalías en este ejercicio.
 
 ## Creación de un recurso de *Anomaly Detector*
 
@@ -103,10 +103,6 @@ Ahora que tiene un entorno de Cloud Shell, puede ejecutar una aplicación sencil
     ```
 
 1. Revise los resultados y tenga en cuenta que la columna final de los resultados sea **True** o **False** para indicar si el valor registrado en cada fecha y hora se considera una anomalía o no. Considere cómo podríamos usar esta información en una situación real. ¿Qué acción podría desencadenar la aplicación si los valores fueran de temperatura del frigorífico o presión sanguínea y se detectaran anomalías?  
-
-## Más información
-
-Esta sencilla aplicación muestra solo algunas de las funcionalidades del servicio Anomaly Detector. Para obtener más información sobre lo que puede hacer con este servicio, consulte la [página de Anomaly Detector](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
 
 ## Limpieza
 
