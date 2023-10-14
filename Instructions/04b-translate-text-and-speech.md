@@ -13,15 +13,15 @@ La inteligencia artificial (IA) puede ayudar a simplificar la comunicación medi
 
 Para probar las funcionalidades del servicio Translator, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## Creación de un recurso de *Cognitive Services*
+## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Para poder usar el servicio Translator, cree un recurso de **Translator** o un recurso de **Cognitive Services**.
+Para poder usar el servicio Translator, cree un recurso de **Translator** o un recurso de los **servicios de Azure AI**.
 
-Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripción de Azure.
+Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Seleccione el botón **&#65291;Crear un recurso**, busque *Cognitive Services* y cree un recurso de **Cognitive Services** con la siguiente configuración:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
@@ -31,15 +31,15 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 1. Revise y cree el recurso y espere a que finalice la implementación. A continuación, vaya al recurso implementado.
 
-1. Vea la página **Claves y punto de conexión** del recurso de Cognitive Services. Necesitará las claves y la ubicación para conectarse desde las aplicaciones cliente.
+1. Vea la página **Claves y punto de conexión** del recurso de servicios de Azure AI. Necesitará las claves y la ubicación para conectarse desde las aplicaciones cliente.
 
-### Obtención de la clave y la ubicación del recurso de Cognitive Services
+### Obtención de la clave y la ubicación del recurso de servicios de Azure AI
 
-1. Espere a que la implementación finalice. Después, vaya al recurso de Cognitive Services y, en la página **Información general**, seleccione el vínculo para administrar las claves del servicio. Necesitará las claves y la ubicación para conectarse al recurso de Cognitive Services desde las aplicaciones cliente.
+1. Espere a que la implementación finalice. Después, vaya al recurso de servicios de Azure AI y, en la página **Información general**, seleccione el vínculo para administrar las claves del servicio. Necesitará las claves y la ubicación para conectarse al recurso de servicios de Azure AI desde las aplicaciones cliente.
 
 1. Vea la página **Claves y punto de conexión** del recurso. Necesitará la **ubicación/región** y la **clave** para conectarse desde las aplicaciones cliente.
 
-> **Nota** Para usar el servicio Translator no es necesario usar el punto de conexión de Cognitive Services. Se proporciona un punto final global solo para el servicio Translator. 
+> **Nota** Para usar el servicio Translator no es necesario usar el punto de conexión de servicios de Azure AI. Se proporciona un punto final global solo para el servicio Translator. 
 
 ## Ejecución de Cloud Shell
 
@@ -89,7 +89,7 @@ Ahora que tiene un modelo personalizado, puede ejecutar una aplicación cliente 
 
     ![Editor que contiene código para usar el servicio Translator](media/translate-text-and-speech/translate-code.png)
 
-1. No se preocupe demasiado por los detalles del código, lo importante es que necesita la región/ubicación y cualquiera de las claves para el recurso de Cognitive Services. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_LOCATION**, respectivamente.
+1. No se preocupe demasiado por los detalles del código, lo importante es que necesita la región/ubicación y cualquiera de las claves para el recurso de servicios de Azure AI. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_LOCATION**, respectivamente.
 
     Después de pegar los valores de clave y ubicación, las primeras líneas de código deben tener un aspecto similar al siguiente:
 

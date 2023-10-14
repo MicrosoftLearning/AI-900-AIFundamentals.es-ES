@@ -9,21 +9,21 @@ lab:
 
 El procesamiento de lenguaje natural (NLP) es una rama de la inteligencia artificial (IA) que se ocupa del lenguaje escrito y hablado. Puede usar NLP para crear soluciones que extraigan el significado semántico del texto o la voz, o que formule respuestas significativas en lenguaje natural.
 
-Microsoft Azure *Cognitive Services* incluye las funcionalidades de análisis de texto del servicio *Language*, que proporciona algunas funcionalidades de NLP integradas, incluida la identificación de frases clave en el texto y la clasificación del texto en función de las opiniones.
+Los servicios de Microsoft *Azure AI* incluyen la funcionalidad de análisis de texto en el servicio *Lenguaje*, que proporciona algunas características de NLP integradas, como la identificación de frases clave en el texto y la clasificación del texto en función de las opiniones.
 
 Por ejemplo, supongamos que la organización ficticia *Margie's Travel* anima a los clientes a enviar reseñas sobre sus estancias en hoteles. Puede usar el servicio Language para resumir las reseñas mediante la extracción de frases clave, determinar qué revisiones son positivas y cuáles negativas, o analizar el texto de reseña en busca de menciones de entidades conocidas como ubicaciones o personas.
 
 Para probar las funcionalidades del servicio Language, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell. Los mismos principios y funcionalidad se aplican en soluciones reales, como sitios web o aplicaciones de teléfono.
 
-## Creación de un recurso de *Cognitive Services*
+## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Puede usar el servicio Language creando un recurso de **Language ** o un recurso de **Cognitive Services**.
+Puede usar el servicio Lenguaje creando un recurso de **Lenguaje**  o de los **servicios de Azure AI**.
 
-Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripción de Azure.
+Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Seleccione el botón **&#65291;Crear un recurso**, busque *Cognitive Services* y cree un recurso de **Cognitive Services** con la siguiente configuración:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
@@ -33,9 +33,9 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 1. Revise y cree el recurso.
 
-### Obtención de la clave y la ubicación del recurso de Cognitive Services
+### Obtención de la clave y el punto de conexión para el recurso de los servicios de Azure AI
 
-1. Espere a que la implementación finalice. Después, vaya al recurso de Cognitive Services y, en la página **Información general**, seleccione el vínculo para administrar las claves del servicio. Necesitará el punto de conexión y las claves para conectarse al recurso de Cognitive Services desde las aplicaciones cliente.
+1. Espere a que la implementación finalice. Después, vaya al recurso de servicios de Azure AI y, en la página **Información general**, haga clic en el vínculo para administrar las claves del servicio. Necesitará el punto de conexión y las claves para conectarse al recurso de los servicios de Azure AI desde las aplicaciones cliente.
 
 1. Vea la página **Claves y punto de conexión** del recurso. Necesitará la **clave** y el **punto de conexión** para conectarse desde las aplicaciones cliente.
 
@@ -43,7 +43,7 @@ Si aún no lo ha hecho, cree un recurso de **Cognitive Services** en la suscripc
 
 Para probar las funcionalidades de análisis de texto del servicio Language, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure.
 
-1. En Azure Portal, seleccione el botón **[>_]** (*Cloud Shell*) situado en la parte superior de la página, a la derecha del cuadro de búsqueda. Se abre un panel de Cloud Shell en la parte inferior del portal.
+1. En Azure Portal, seleccione el botón **[>_]** (*Cloud Shell*) situado en la parte superior de la página, a la derecha del cuadro de búsqueda. Se abre un panel de Cloud Shell en la parte inferior del portal.
 
     ![Inicio de Cloud Shell haciendo clic en el icono situado a la derecha del cuadro de búsqueda superior](media/analyze-text-language-service/powershell-portal-guide-1.png)
 
@@ -87,11 +87,11 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
     ![Editor que contiene código para usar el servicio Language](media/analyze-text-language-service/analyze-text-code.png)
 
-1. No se preocupe demasiado por los detalles del código. En Azure Portal, vaya al recurso de Cognitive Services. Luego, seleccione la página **Claves y puntos de conexión** en el panel izquierdo. Copie la clave y el punto de conexión de la página y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
+1. No se preocupe demasiado por los detalles del código. En Azure Portal, vaya al recurso de los servicios de Azure AI. Luego, seleccione la página **Claves y puntos de conexión** en el panel izquierdo. Copie la clave y el punto de conexión de la página y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
 
     > **Consejo** Es posible que tenga que usar la barra de separación para ajustar el área de pantalla mientras trabaja con los paneles **Claves y punto de conexión** y **Editor**.
 
-    ![Busque la pestaña clave y punto de conexión en el panel izquierdo del recurso de Cognitive Services.](media/analyze-text-language-service/key-endpoint-support.png)
+    ![Busque la pestaña de la clave y el punto de conexión en el panel izquierdo del recurso de los servicios de Azure AI.](media/analyze-text-language-service/key-endpoint-support.png)
 
     Después de reemplazar los valores de la clave y punto de conexión, las primeras líneas del código deben tener un aspecto similar al siguiente:
 
@@ -102,7 +102,7 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
 1. En la parte superior derecha del panel del editor, use el botón **...** para abrir el menú y seleccione **Guardar** para guardar los cambios. A continuación, vuelva a abrir el menú y seleccione **Cerrar editor**.
 
-    La aplicación cliente de ejemplo utilizará el servicio Language de Cognitive Services para detectar el lenguaje, extraer frases clave, determinar opiniones y extraer entidades conocidas para las reseñas.
+    La aplicación cliente de ejemplo utilizará el servicio Lenguaje de los servicios de Azure AI para detectar el idioma, extraer frases clave, determinar opiniones y extraer entidades conocidas para las reseñas.
 
 1. En Cloud Shell, escriba el siguiente comando para ejecutar el código:
 
