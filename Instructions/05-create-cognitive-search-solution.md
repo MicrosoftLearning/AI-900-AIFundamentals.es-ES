@@ -49,7 +49,7 @@ La solución que va a crear para Fourth Coffee requiere los siguientes recursos 
 
 Deberá aprovisionar un recurso de **servicios de Azure AI** que se encuentre en la misma ubicación que el recurso de Azure Cognitive Search. La solución de búsqueda usará este recurso para enriquecer los datos del almacén de datos con información generada con inteligencia artificial.
 
-1. Vuelva a la página principal de Azure Portal. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
+1. Vuelva a la página principal de Azure Portal. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *el mismo grupo de recursos que el recurso de Azure Cognitive Search*.
     - **Región**: *la misma ubicación que el recurso de Azure Cognitive Search*.
