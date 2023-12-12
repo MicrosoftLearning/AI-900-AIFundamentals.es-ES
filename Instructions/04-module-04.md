@@ -43,7 +43,7 @@ Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscr
 
 Para probar las funcionalidades de análisis de texto del servicio Language, usaremos una sencilla aplicación de línea de comandos que se ejecuta en Cloud Shell en Azure.
 
-1. En Azure Portal, seleccione el botón **[>_]** (*Cloud Shell*) situado en la parte superior de la página, a la derecha del cuadro de búsqueda. Se abre un panel de Cloud Shell en la parte inferior del portal.
+1. En Azure Portal, seleccione el botón **[>_]** (*Cloud Shell*) situado en la parte superior de la página, a la derecha del cuadro de búsqueda. Se abre un panel de Cloud Shell en la parte inferior del portal.
 
     ![Inicio de Cloud Shell haciendo clic en el icono situado a la derecha del cuadro de búsqueda superior](media/analyze-text-language-service/powershell-portal-guide-1.png)
 

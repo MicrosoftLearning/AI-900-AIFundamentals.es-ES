@@ -33,7 +33,7 @@ Para usar Azure Machine Learning, debe aprovisionar un área de trabajo de Azure
 
 1. Seleccione **Iniciar estudio** (o abra una nueva pestaña del explorador y vaya a [https://ml.azure.com](https://ml.azure.com?azure-portal=true) e inicie sesión en estudio de Azure Machine Learning con su cuenta de Microsoft). Cierre los mensajes que se muestran.
 
-1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no, seleccione **Todas las áreas de trabajo** en el menú izquierdo y seleccione el área de trabajo que acaba de crear.
+1. En estudio de Azure Machine Learning, debería ver el área de trabajo recién creada. Si no, selecciona **Todas las áreas de trabajo** en el menú izquierdo y selecciona el área de trabajo que acabas de crear.
 
 ## Habilitación de características en vista previa (GB)
 
@@ -75,7 +75,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
             - **Tipo**: tabular
         - **Origen de datos**:
             - Seleccione **De archivos web**
-        - **Dirección URL web**: 
+        - **Dirección URL web**:
             - **Dirección URL web**: `https://aka.ms/bike-rentals`
             - **Omitir validación de datos**: *no seleccionar*.
         - **Configuración**:
@@ -114,7 +114,7 @@ El aprendizaje automático automatizado le permite probar varios algoritmos y pa
         - **Porcentaje de datos de validación**: 10
         - **Conjunto de datos de prueba**: ninguno
 
-    **Proceso**:
+    **Proceso:**
 
     - **Selección del tipo de proceso**: sin servidor
     - **Tipo de máquina virtual**: CPU

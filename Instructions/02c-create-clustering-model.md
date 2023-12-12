@@ -70,7 +70,7 @@ Para empezar a trabajar con el diseñador de Azure Machine Learning, primero deb
         - **Descripción**: datos de pingüinos
         - **Tipo de conjunto de datos**: tabular
     - **Origen de datos**: desde archivos web
-    - **Dirección URL web**: 
+    - **Dirección URL web**:
         - **Dirección URL web**: https://aka.ms/penguin-data
         - **Omitir validación de datos**: *no seleccionar*.
     - **Configuración**:

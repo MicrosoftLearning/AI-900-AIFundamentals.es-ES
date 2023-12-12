@@ -30,7 +30,7 @@ La característica personalizada de respuesta a preguntas del servicio Language 
     - **Plan de tarifa de Azure Search**: Gratis F (3 índices) - (*Si este plan no está disponible, seleccione Estándar S (50 índices)* )
     - **Al marcar esta casilla, certifico que he revisado y reconocido los términos del aviso de IA responsable**: *Seleccionado*.
 
-    > **Nota** Si ya ha aprovisionado un recurso de **Azure Cognitive Search** en el plan Gratis, puede que la cuota no le permita crear otro. En ese caso, seleccione un nivel distinto de **Gratis F**.
+    > **Nota** Si ya has aprovisionado un recurso de **Azure Cognitive Search** en el plan Gratis, puede que la cuota no te permita crear otro. En ese caso, seleccione un nivel distinto de **Gratis F**.
 
 1. Haga clic en **Revisar y crear**, y después en **Crear**. Espere a la implementación del servicio Language que admitirá la knowledge base personalizada de respuesta a preguntas.
 

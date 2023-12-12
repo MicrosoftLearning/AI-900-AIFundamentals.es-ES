@@ -7,7 +7,7 @@ lab:
 
 > **Nota** Para completar este laboratorio, necesitará una [suscripción de Azure](https://azure.microsoft.com/free?azure-portal=true) en la que tenga acceso de administrador.
 
-El servicio *Computer Vision* usa modelos de Machine Learning entrenados previamente para analizar imágenes y extraer información sobre ellas.
+El servicio *Computer Vision* usa modelos de aprendizaje automático entrenados previamente para analizar imágenes y extraer información sobre ellas.
 
 Por ejemplo, supongamos que el minorista ficticio *Northwind Traders* ha decidido implementar una "tienda inteligente", en la que los servicios de inteligencia artificial supervisan la tienda para identificar a los clientes que requieren asistencia y orientan a los empleados para que los ayuden. Mediante el servicio Computer Vision, las imágenes capturadas por las cámaras de toda la tienda se pueden analizar para proporcionar descripciones significativas de lo que representan.
 
@@ -21,7 +21,7 @@ Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscr
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
@@ -81,7 +81,7 @@ Ahora que tiene un entorno de Cloud Shell, puede ejecutar una aplicación sencil
 
     ![Editor que contiene código para analizar una imagen](media/analyze-images-computer-vision-service/analyze-image-code.png)
 
-1. No se preocupe demasiado por el código, lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves para el recurso de servicios de Azure AI. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
+1. No te preocupes demasiado por el código; lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves del recurso de Servicios de Azure AI. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
 
     > **Consejo** Es posible que tenga que usar la barra de separación para ajustar el área de pantalla mientras trabaja con los paneles **Claves y punto de conexión** y **Editor**.
 

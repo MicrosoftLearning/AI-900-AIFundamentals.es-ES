@@ -15,13 +15,13 @@ Para probar las funcionalidades del servicio Translator, usaremos una sencilla a
 
 ## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Para poder usar el servicio Translator, cree un recurso de **Translator** o un recurso de los **servicios de Azure AI**.
+Para poder usar el servicio Translator, crea un recurso de **Translator** o un recurso de **Servicios de Azure AI**.
 
 Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
@@ -35,11 +35,11 @@ Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscr
 
 ### Obtención de la clave y la ubicación del recurso de servicios de Azure AI
 
-1. Espere a que la implementación finalice. Después, vaya al recurso de servicios de Azure AI y, en la página **Información general**, seleccione el vínculo para administrar las claves del servicio. Necesitará las claves y la ubicación para conectarse al recurso de servicios de Azure AI desde las aplicaciones cliente.
+1. Espere a que la implementación finalice. Después, vaya al recurso de servicios de Azure AI y, en la página **Información general**, haga clic en el vínculo para administrar las claves del servicio. Necesitarás las claves y la ubicación para conectarte a tu recurso de Servicios de Azure AI desde las aplicaciones cliente.
 
 1. Vea la página **Claves y punto de conexión** del recurso. Necesitará la **ubicación/región** y la **clave** para conectarse desde las aplicaciones cliente.
 
-> **Nota** Para usar el servicio Translator no es necesario usar el punto de conexión de servicios de Azure AI. Se proporciona un punto final global solo para el servicio Translator. 
+> **Nota** Para usar el servicio Translator no es necesario usar el punto de conexión de Servicios de Azure AI. Se proporciona un punto final global solo para el servicio Translator. 
 
 ## Ejecución de Cloud Shell
 

@@ -75,7 +75,7 @@ Deberá aprovisionar un recurso de **servicios de Azure AI** que se encuentre en
 
 1. Haga clic en **Revisar**, y después en **Crear**. Espere a que se complete la implementación y, a continuación, vaya al recurso implementado.
 
-1. En la cuenta de Azure Storage que ha creado, en el panel de menús izquierdo, seleccione **Configuración** (en **Configuración**).
+1. En la cuenta de Azure Storage que has creado, en el panel de menús izquierdo, selecciona **Configuración** (en **Configuración**).
 1. Cambie la configuración de *Permitir el acceso anónimo de blobs* a **Habilitado** y, después, seleccione **Guardar**.
 
 ## Carga de documentos en Azure Storage

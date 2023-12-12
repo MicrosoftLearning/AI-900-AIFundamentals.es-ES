@@ -52,7 +52,7 @@ Es importante observar que la respuesta puede parecerse, pero no ser la misma. E
 
 1. Escriba la solicitud: `Translate that into C#`. Observe que no ha necesitado especificar qué es "eso", ya que Bing Copilot sabe que se refiere al historial de conversaciones. 
 
-## Bonus 
+## Bonificaciones 
 
 1. Escriba una solicitud: `What are 3 examples of generative AI helping people?`. Esto puede servirle como lluvia de ideas para su propio Copilot.  
 
