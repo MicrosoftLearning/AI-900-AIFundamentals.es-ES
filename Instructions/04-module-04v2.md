@@ -17,13 +17,13 @@ Para probar las funcionalidades del servicio Form Recognizer, usaremos una senci
 
 ## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Para aprovisionar el servicio Form Recognizer, puede crear un recurso de **Form Recognizer** o un recurso de **servicios de Azure AI**.
+Puedes utilizar el servicio Form Recognizer creando un recurso de **Form Recognizer** o un recurso de **Servicios de Azure AI**.
 
 Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
@@ -83,7 +83,7 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
     ![Editor que contiene código para analizar los campos de un recibo.](media/analyze-receipts/recognize-receipt-code.png)
 
-1. No se preocupe demasiado por los detalles del código, lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves para el recurso de servicios de Azure AI. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
+1. No te preocupes demasiado por los detalles del código; lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves para el recurso de Servicios de Azure AI. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
 
     > **Consejo** Es posible que tenga que usar la barra de separación para ajustar el área de pantalla mientras trabaja con los paneles **Claves y punto de conexión** y **Editor**.
 

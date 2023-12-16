@@ -19,13 +19,13 @@ El servicio **Visión de Azure AI** proporciona compatibilidad con tareas de OCR
 
 ## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Para aprovisionar el servicio Visión de Azure AI, puede crear un recurso **Computer Vision** o un recurso **servicios de Azure AI**.
+Puedes utilizar el servicio Visión de Azure AI creando un recurso de **Computer Vision** o un recurso de **Servicios de Azure AI**.
 
 Si aún no lo ha hecho, cree un recurso de **servicios de Azure AI** en la suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: *elija cualquier región disponible*.
@@ -85,7 +85,7 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
 
     ![Editor que contiene código para analizar el texto de las imágenes.](media/read-text-computer-vision/ocr-code.png)
 
-1. No se preocupe demasiado por los detalles del código, lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves para el recurso de servicios de Azure AI. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
+1. No te preocupes demasiado por los detalles del código; lo importante es que necesita la dirección URL del punto de conexión y cualquiera de las claves para el recurso de Servicios de Azure AI. Cópielos desde la página **Claves y puntos de conexión** del recurso en Azure Portal y péguelos en el editor de código, pero reemplace los valores de marcador de posición **YOUR_KEY** y **YOUR_ENDPOINT**, respectivamente.
 
     > **Consejo** Es posible que tenga que usar la barra de separación para ajustar el área de pantalla mientras trabaja con los paneles **Claves y punto de conexión** y **Editor**.
 
@@ -96,7 +96,7 @@ Ahora que tiene un modelo personalizado, puede ejecutar una sencilla aplicación
     $endpoint="https..."
     ```
 
-1. En la parte superior derecha del panel del editor, use el botón **...** para abrir el menú y seleccione **Guardar** para guardar los cambios. A continuación, vuelva a abrir el menú y seleccione **Cerrar editor**. Ahora que ha configurado la clave y el punto de conexión, puede usar el recurso de servicios de Azure AI para extraer texto de una imagen.
+1. En la parte superior derecha del panel del editor, use el botón **...** para abrir el menú y seleccione **Guardar** para guardar los cambios. A continuación, vuelva a abrir el menú y seleccione **Cerrar editor**. Ahora que has configurado la clave y el punto de conexión, puedes usar el recurso de Servicios de Azure AI para extraer texto de una imagen.
 
     Uso de **Read** API. En este caso, tiene una imagen de publicidad para la empresa minorista ficticia Northwind Traders que incluye texto.
 

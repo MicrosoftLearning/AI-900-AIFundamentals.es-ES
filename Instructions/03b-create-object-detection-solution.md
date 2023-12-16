@@ -17,15 +17,15 @@ Para probar las funcionalidades del servicio Custom Vision para detectar objetos
 
 ## Creación de un grupo de recursos de *servicios de Azure AI*
 
-Para usar el servicio Computer Vision, puede crear un recurso de **Custom Vision** o un recurso de **servicios de Azure AI**.
+Para usar el servicio Computer Vision, debe crear un recurso de **Custom Vision** o de los **servicios de Azure AI**.
 
 > **Nota** No todos los recursos están disponibles en todas las regiones. Tanto si crea un recurso de Custom Vision como de servicios de Azure AI, para acceder a los servicios de Custom Vision, solo se pueden usar los recursos creados en [determinadas regiones](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services). Para simplificar el proceso, se selecciona previamente una región en las instrucciones de configuración siguientes.
 
-Cree un recurso **servicios de Azure AI** en la suscripción de Azure.
+Cree un recurso de los **servicios de Azure AI** en su suscripción de Azure.
 
 1. En otra pestaña del explorador, abra Azure Portal en [https://portal.azure.com](https://portal.azure.com?azure-portal=true) e inicie sesión con su cuenta Microsoft.
 
-1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
+1. Haga clic en el botón **&#65291;Crear un recurso** y busque *Servicios de Azure AI*. Seleccione **Crear** un plan de **servicios de Azure AI**. Se le dirigirá a una página para crear un recurso de servicios de Azure AI. Configúrelo con los valores siguientes:
     - **Suscripción**: *su suscripción a Azure*.
     - **Grupo de recursos**: *cree o seleccione un grupo de recursos con un nombre único*.
     - **Región**: Este de EE. UU.

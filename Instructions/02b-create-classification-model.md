@@ -63,7 +63,7 @@ El clúster de proceso tardará algún tiempo en crearse. Mientras espera, puede
         - **Descripción**: datos de diabetes
         - **Tipo de conjunto de datos**: tabular
     - **Origen de datos**: desde archivos web
-    - **Dirección URL web**: 
+    - **Dirección URL web**:
         - **Dirección URL web**: https://aka.ms/diabetes-data
         - **Omitir validación de datos**: *no seleccionar*.
     - **Configuración**:
